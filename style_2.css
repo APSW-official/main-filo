@@ -64,3 +64,6 @@ p{
     font-size: 100px;
 }
 
+output table tr,td{
+      border: 1px solid #dddddd;
+}
