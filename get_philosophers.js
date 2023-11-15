@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
     let data1="";
-    data1+=`<table style="border-collapse: collapse;">`
+    data1+=`<table">`
         let aux=jsonData[0][1];
-        data1+=`<tr style="border-bottom? 1xp solid white;">
+        data1+=`<tr style="border-bottom: 1xp solid white;">
         <td>${aux.toUpperCase()}</td>
         </tr>
         `
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 for(el of jsonData){
      if(el[1]!==aux){
         aux=el[1];
-        data1+=`<tr style="border-bottom: 1xp solid white;border-top:1px solid white;">
+        data1+=`<tr style="border-bottom: 1xp solid white; border-top:1px solid white;">
         <td>${aux.toUpperCase()}</td>
         </tr>
         `
