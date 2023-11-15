@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const sheet = workbook.Sheets[sheetName];
       const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
     let data1="";
-     for(el of josonData){
+     for(el of jsonData){
    data1+=`
    <tr>
     <td>${el.name}</td>
