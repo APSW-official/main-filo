@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <link rel="stylesheet" href="style_2.css">
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
     <script src="get_philosophers.js"></script>
     <title>STUDIU</title>
 </head>
+
 <body>
     <center>
-
-
-<div class="sticky-menu">
-    <table>
+        <div class="sticky-menu">
+            <table>
         <tr>
            <td>A</td> 
            <td>N</td>
@@ -64,54 +65,48 @@
             <td>Z</td>
         </tr>
     </table>
-    <button onclick="window.location.href='index.html'">Ieșire</button>
+            <button onclick="window.location.href='index.html'">Ieșire</button>
+        </div>
 
+        <div id="section">
+            <h2 style="padding-top: 10px; font-size: 50px;">STUDIU</h2>
+            <table>
+                <tr>
+                    <td>a</td>
+                </tr>
+                <tr>
+                    <td>b</td>
+                </tr>
+                <tr>
+                    <td>c</td>
+                </tr>
+            </table>
+            <div id="output"></div>
+        </div>
+    </center>
 
+    <script>
+        // Add JavaScript if needed
+        // For example, to add smooth scrolling for anchor links in the sticky menu
 
-</div>
-<div id="section">
-    <h2 style="padding-top: 10px; font-size: 50px;" >STUDIU</h2>
-    <table>
-        <tr>
-            <td>a</td>
-        </tr>
-        <tr>
-            <td>b</td>
-        </tr>
-        <tr>
-            <td>c</td>
-        </tr>
-    </table>
-<div id="outpot">
-    
-</div>
-</div>
-</center>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('.sticky-menu a');
 
- 
-</body>
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-<script>
-    // Add JavaScript if needed
-// For example, to add smooth scrolling for anchor links in the sticky menu
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
 
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll('.sticky-menu a');
-
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            window.scrollTo({
-                top: targetElement.offsetTop - document.querySelector('.sticky-menu').offsetHeight,
-                behavior: 'smooth'
+                    window.scrollTo({
+                        top: targetElement.offsetTop - document.querySelector('.sticky-menu').offsetHeight,
+                        behavior: 'smooth'
+                    });
+                });
             });
         });
-    });
-});
+    </script>
+</body>
 
-</script>
 </html>
