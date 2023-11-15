@@ -32,5 +32,5 @@ document.addEventListener('DOMContentLoaded', function() {
 output.innerHTML=data
     };
   
-    
+     xhr.send();
   }
