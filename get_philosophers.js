@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
      for(el of jsonData){
    data1+=`
    <tr>
-    <td>${el.name}</td>
-    <td>${el.date}</td>
-    <td>${el.age}</td>
-   </tr>
+                <td>${el[0]}</td>
+                <td>${el[1]}</td>
+                <td>${el[2]}</td>
+            </tr>
    `
 }
 outputDiv.innerHTML=data1
