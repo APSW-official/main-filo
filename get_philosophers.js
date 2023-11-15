@@ -31,7 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
         ;
         
 for(el of jsonData){
-         
+     if(el[1]!==aux){
+        aux=el[1];
+        data1+=`<tr>
+        <td>${aux.toUpperCase()}</td>
+        </tr>
+        `
+        ;
+     }
    data1+=`
    <tr>
        <td   >${el[0]}</td>
