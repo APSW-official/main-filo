@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   function processFile() {
-    const filePath = 'C:\Users\Serban\all\Serban.doc\Scoala\Socio-umane\site-filo\text.xlsx'; // Update with your actual file path
+    const filePath = 'text.xlsx'; // Update with your actual file path
     const outputDiv = document.getElementById('output');
   
     const xhr = new XMLHttpRequest();
