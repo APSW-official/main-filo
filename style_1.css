@@ -1,0 +1,48 @@
+html{
+    background-color: #1c1a33;
+    font-family: "Microsoft New Tai Lue";
+    font-style: italic;
+    color: white;
+}
+
+
+h1{
+    padding-top: 60px;
+    font-size: 60px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    width:250px;
+    height: 100px;
+    text-align:center;
+    border:1px solid white;
+    padding:5px;
+    font-size: 40px;
+
+}
+.start_menu {
+    border-collapse:separate;
+    border-spacing:0 30px;
+}
+
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff0565;
+    background-color: transparent;
+  }
+
+
+
+
+
+
+/* STUDIU */

@@ -1,0 +1,65 @@
+html{
+    background-color: #1c1a33;
+    font-family: "Microsoft New Tai Lue";
+    font-style: italic;
+    color: white;
+}
+
+/* Style for the sticky menu */
+.sticky-menu {
+    position: fixed;
+    left: 90px;
+    top: 100px;
+    font-size: 20px;
+    /* background-color: white; */
+}
+
+
+
+p{
+    font-size: 50px;
+}
+
+#section{
+    padding-left: 100px;
+}
+
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+
+button{
+    border:1px solid white;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    background-color: #1c1a33;
+    font-family: "Microsoft New Tai Lue";
+    font-style: italic;
+
+}
+
+
+button:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+button:hover {
+    color: #ff0565;
+    background-color: transparent;
+  }
+
+p{
+    font-size: 100px;
+}
