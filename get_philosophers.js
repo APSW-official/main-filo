@@ -27,7 +27,7 @@ for(el of jsonData){
          
    data1+=`
    <tr>
-       <td>${el[0]}</td>
+       <td   border: 1px solid black;>${el[0]}</td>
     </tr>
    `
 }
