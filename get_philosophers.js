@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
    </tr>
    `
 }
-output.innerHTML=data
+outputDiv.innerHTML=data1
     };
   
      xhr.send();
