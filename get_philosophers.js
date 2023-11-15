@@ -33,7 +33,7 @@ for(el of jsonData){
     </tr>
    `
 }
-data1+="</table>"
+data1+=`</table>`
 outputDiv.innerHTML=data1
     };
   
