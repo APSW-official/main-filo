@@ -29,13 +29,21 @@ th, td {
     border-spacing:0 30px;
 }
 
+
 a:link {
     color: white;
     background-color: transparent;
     text-decoration: none;
+    
 }
 
-a:hover {
-    color: #ff0565;
-    background-color: transparent;
-  }
+.start_menu div {
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    text-align:center;
+    padding-top:20px;
+}
+.start_menu div:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Change the background color on hover */
+}
