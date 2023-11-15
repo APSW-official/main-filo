@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
     let data1="";
-    data1+=`<table">`
+    data1+=`<table border-collapse: collapse;">`
         let aux=jsonData[0][1];
         data1+=`<tr >
         <td style="border-bottom: 1xp solid white;">${aux.toUpperCase()}</td>
