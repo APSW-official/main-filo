@@ -19,9 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // Process the workbook, for example, display the content in the outputDiv
       const sheetName = workbook.SheetNames[0];
       const sheet = workbook.Sheets[sheetName];
-        console.log(sheet);
       const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-  
+        console.log(jsonData);
       outputDiv.innerText = JSON.stringify(jsonData, null, 2);
     };
   
