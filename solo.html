@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <title>PROVOCARE</title>
+  <link rel="stylesheet" type="text/css" href="style_4.css">
+  <link rel="icon" type="image/x-icon" href="image.png">
+</head>
+<body>
+<center>
+  <h3>Test</h3>
+<table class="difficulty">
+    <tr>
+        <td>Ușor</td>
+        <td>Mediu</td>
+        <td>Greu</td>
+    </tr>
+</table>
+
+
+    
+</center>
+<div style="align-items: center;">
+<div id="variante">
+<table>
+    <tr>
+        <td style="    font-size: 30px;">Variante</td>
+        <td class="border">3</td>
+        <td class="border">5</td>
+        <td class="border">7</td>
+    </tr>
+</table>
+</div>
+
+<div class="toggle">
+    <label class="switch">
+        <input type="checkbox" id="toggleSwitch">
+        <span class="slider"></span>
+    </label>
+
+</div>
+<div id="indicii">
+    <table>
+        <tr>
+            <td style="font-size: 30px;">Indicii</td>
+            <td class="border">1</td>
+            <td class="border">2</td>
+            <td class="border">3</td>
+        </tr>
+    </table>
+    </div>
+
+</div>
+</body>
+
+
+  <script>
+    document.getElementById("toggleSwitch").addEventListener("change", function() {
+      var x = document.getElementById("indicii");
+      x.style.display = this.checked ? "inline-block" : "none";
+    });
+  </script>
+  
