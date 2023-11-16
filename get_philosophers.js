@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
     let data1="";
-    data1+="<table>";
+    
 
         
 for(el of jsonData){
@@ -33,7 +33,6 @@ for(el of jsonData){
     </tr>
    `
 }
-data1+=`</table>`
 outputDiv.innerHTML=data1
     };
   
