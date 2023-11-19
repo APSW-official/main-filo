@@ -33,8 +33,9 @@ for(el of jsonData){
     </tr>
    `
 }
+console.log(data1);
 outputDiv.innerHTML=data1
     };
-  console.log(data1);
+  
      xhr.send();
   }
