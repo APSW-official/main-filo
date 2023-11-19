@@ -6,7 +6,7 @@ function processFile() {
     const filePath = 'filozofi.xlsx'; // Update with your actual file path
     const outputDiv = document.getElementById('output');
     let data1 = ""; // Declare data1 here to make it accessible within the entire function
-
+    let prevLet;
     const xhr = new XMLHttpRequest();
     xhr.open('GET', filePath, true);
     xhr.responseType = 'arraybuffer';
@@ -21,7 +21,7 @@ function processFile() {
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
-let prevLet=jsonData[0][1];
+        prevLet=jsonData[0][1];
         data1+=`
         <tr style="border-bottom:1px solid white;">
             <td>${preLet.toUpperCase()}</td>
