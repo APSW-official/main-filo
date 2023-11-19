@@ -29,12 +29,12 @@ for(el of jsonData){
 
    data1+=`
    <tr>
-       <td   >${el[0]}</td>
+       <td>${el[0]}</td>
     </tr>
    `
 }
 outputDiv.innerHTML=data1
     };
-  
+  console.log(data1);
      xhr.send();
   }
