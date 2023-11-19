@@ -29,7 +29,7 @@ function processFile() {
         `;
         
         for (el of jsonData) {
-            if(el[1]!=pervLet){
+            if(el[1]!=prevLet){
                 data1+=`
                 <tr style="border-bottom: 1px solid white; border-top: 1px solid white;">
                     <td>${prevLet.toUpperCase()}</td>
