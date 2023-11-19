@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style_2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="get_philosophers.js"></script>
+      <link rel="icon" type="image/x-icon" href="image.png">
+    <title>STUDIU</title>
+</head>
+
+<body>
+    <center>
+        <div class="sticky-menu">
+            <table>
+        <tr>
+           <td>A</td> 
+           <td>N</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>O</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>P</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>Q</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>R</td>
+        </tr>
+        <tr>
+            <td>F</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <td>G</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td>U</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>V</td>
+        </tr>
+        <tr>
+            <td>J</td>
+            <td>W</td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>L</td>
+            <td>Y</td>
+        </tr>
+        <tr>
+            <td>M</td>
+            <td>Z</td>
+        </tr>
+    </table>
+            <button onclick="window.location.href='index.html'">Ieșire</button>
+        </div>
+
+        <div id="section">
+            <h2 style="padding-top: 10px; font-size: 50px;">STUDIU</h2>
+        <tabel id="output"></tabel>
+        </div>
+    </center>
+
+    <script>
+        // Add JavaScript if needed
+        // For example, to add smooth scrolling for anchor links in the sticky menu
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('.sticky-menu a');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - document.querySelector('.sticky-menu').offsetHeight,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
