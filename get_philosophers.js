@@ -30,12 +30,13 @@ function processFile() {
         
         for (el of jsonData) {
             if(el[1]!=prevLet){
+                prevLet=el[1];
                 data1+=`
                 <tr class="modified-prevLet">
                     <td>${prevLet.toUpperCase()}</td>
                 </tr>
                 `;
-                prevLet=el[1];
+                
             }
             data1 += `
                 <tr>
