@@ -23,7 +23,7 @@ function processFile() {
         console.log(jsonData);
         prevLet=jsonData[0][1];
         data1+=`
-        <tr style="border-bottom:1px solid white;">
+        <tr class="modified-prevLet">
             <td>${prevLet.toUpperCase()}</td>
         </tr>
         `;
@@ -31,10 +31,11 @@ function processFile() {
         for (el of jsonData) {
             if(el[1]!=prevLet){
                 data1+=`
-                <tr style="border-bottom: 1px solid white; border-top: 1px solid white;">
+                <tr class="modified-prevLet">
                     <td>${prevLet.toUpperCase()}</td>
                 </tr>
                 `;
+                prevLet=el[1];
             }
             data1 += `
                 <tr>
