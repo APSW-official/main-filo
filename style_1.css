@@ -1,3 +1,13 @@
+body {
+    position: relative;
+    margin: 0;
+    height: 101vh;
+}
+
+.parent {
+    position: relative
+}
+
 html{
     background-color: #1c1a33;
     font-family: "Microsoft New Tai Lu";
@@ -5,10 +15,70 @@ html{
     color: white;
 }
 
+/*pt background*/
 
-h1{
-    padding-top: 60px;
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+    .bubbles span {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: #4fc3dc;
+        margin: 0 4px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+        animation: animate 15s linear infinite;
+        animation-duration: calc(100s / var(--i));
+    }
+
+        .bubbles span:nth-child(even) {
+            background: #ff2d75;
+            box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+            animation: animate 15s linear infinite;
+            animation-duration: calc(100s / var(--i));
+        }
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+
+.bottom_head {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/*pt background*/
+
+h1 {
+    position: relative;
+    padding-top: -10px;
+    margin: 0;
     font-size: 60px;
+    z-index: 2;
 }
 
 table {
@@ -16,17 +86,19 @@ table {
 }
 
 th, td {
-    width:250px;
+    position: relative;
+    width: 250px;
     height: 100px;
-    text-align:center;
-    border:1px solid white;
-    padding:5px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 5px;
     font-size: 40px;
-
 }
 .start_menu {
-    border-collapse:separate;
-    border-spacing:0 30px;
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 0 40px;
+    z-index: 2;
 }
 
 a:link {
@@ -43,8 +115,9 @@ a:link {
     text-align:center;
     padding-top:20px;
 }
-.start_menu div:hover {
-    background-color: rgba(0, 0, 0, 0.4); /* Change the background color on hover */
+.start_menu td:hover {
+    background-color: rgba(0, 0, 0, 0.4); 
+
 }
 
 
