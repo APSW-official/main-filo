@@ -21,8 +21,21 @@ function processFile() {
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
-
+let prevLet=jsonData[0][1];
+        data1+=`
+        <tr style="border-bottom:1px solid white;">
+            <td>${preLet.toUpperCase()}</td>
+        </tr>
+        `;
+        
         for (el of jsonData) {
+            if(el[1]!=pervLet){
+                data1+=`
+                <tr style="border-bottom: 1px solid white; border-top: 1px solid white;">
+                    <td>${preLet.toUpperCase()}</td>
+                </tr>
+                `;
+            }
             data1 += `
                 <tr>
                     <td>${el[0]}</td>
