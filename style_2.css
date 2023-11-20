@@ -93,4 +93,5 @@ table#output {
 .sticky-menu button {
     border: none;
     outline: none;
+    padding:none;
 }
