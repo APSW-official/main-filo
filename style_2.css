@@ -82,7 +82,7 @@ table#output {
     font-size: 30px;
 }
 
-#output .modified-prevLet {
+#output .modified-prevLet-bot {
     border-bottom: 1px solid white;
     margin-bottom: 10px;
     display: block; 
