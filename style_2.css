@@ -79,6 +79,12 @@ table#output {
     margin-top: 10px;
     margin-bottom: 10px;
     display: block; 
-    font-size: 40px;
+    font-size: 30px;
 }
 
+#output .modified-prevLet {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    display: block; 
+    font-size: 30px;
+}
