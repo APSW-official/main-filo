@@ -24,7 +24,7 @@ function processFile() {
         prevLet=jsonData[0][1];
 data1 += `
     <tr class="modified-prevLet-bot">
-        <td>${prevLet.toUpperCase()}</td>
+        <td id="prevLet.toUpperCase()">${prevLet.toUpperCase()}</td>
     </tr>
 `;
 
