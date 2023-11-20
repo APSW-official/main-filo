@@ -90,7 +90,7 @@ table#output {
 }
 
 
-table.button {
+#output button {
     border: none;
     outline: none;
 }
