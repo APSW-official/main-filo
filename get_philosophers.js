@@ -22,30 +22,30 @@ function processFile() {
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
         prevLet=jsonData[0][1];
-        data1+=`
-        <tr class="modified-prevLet">
-            <td>${prevLet.toUpperCase()}</td>
-        </tr>
+data1 += `
+    <tr class="modified-prevLet">
+        <td>${prevLet.toUpperCase()}</td>
+    </tr>
+`;
+
+for (el of jsonData) {
+    if (el[1] != prevLet) {
+        prevLet = el[1];
+        data1 += `
+            <tr class="modified-prevLet">
+                <td>${prevLet.toUpperCase()}</td>
+            </tr>
         `;
-        
-        for (el of jsonData) {
-            if(el[1]!=prevLet){
-                prevLet=el[1];
-                data1+=`
-                <tr class="modified-prevLet">
-                    <td>${prevLet.toUpperCase()}</td>
-                </tr>
-                `;
-                
-            }
-            data1 += `
-                <tr>
-                    <td>${el[0]}</td>
-                </tr>
-            `;
-        }
-        console.log(data1);
-        outputDiv.innerHTML = data1;
+    }
+    data1 += `
+        <tr>
+            <td>${el[0]}</td>
+        </tr>
+    `;
+}
+
+outputDiv.innerHTML = data1;
+
     };
 
     xhr.send();
