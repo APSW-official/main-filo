@@ -90,7 +90,7 @@ table#output {
 }
 
 
-#output button {
+.sticky-menu button {
     border: none;
     outline: none;
 }
