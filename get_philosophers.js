@@ -23,7 +23,7 @@ function processFile() {
         console.log(jsonData);
         prevLet=jsonData[0][1];
 data1 += `
-    <tr class="modified-prevLet">
+    <tr styles="border-bottom: 1px solid white;">
         <td>${prevLet.toUpperCase()}</td>
     </tr>
 `;
