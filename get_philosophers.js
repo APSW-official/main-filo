@@ -32,7 +32,7 @@ for (el of jsonData) {
     if (el[1] != prevLet) {
         prevLet = el[1];
         data1 += `
-             <tr class="modified-prevLet-bot" id="${prevLet.toUpperCase()}">
+             <tr class="modified-prevLet" id="${prevLet.toUpperCase()}">
                 <td>${prevLet.toUpperCase()}</td>
             </tr>
         `;
