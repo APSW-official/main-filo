@@ -72,5 +72,6 @@ p{
 
 
 
-.output{font-size:20px;
+table .output{
+    font-size:20px;
 }
