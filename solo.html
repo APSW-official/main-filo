@@ -4,17 +4,24 @@
   <title>PROVOCARE</title>
   <link rel="stylesheet" type="text/css" href="style_4.css">
   <link rel="icon" type="image/x-icon" href="image.png">
+  <script src="code_test.js"></script>
 </head>
 <body>
-  
+<div id="startDiv">
+  <button style="border: 1px solid white; width: 90px;  font-size: 40px; height: 50px;  background-color: transparent;  color: white;  cursor: pointer;  font-size: 16px;  margin-top: 20px; margin-left: 200px; " onclick="window.location.href='start.html'">Ieșire</button>
 <center>
   <h3>Test</h3>
-<button onclick="window.location.href='index.html'">Ieșire</button>
+
 <table class="difficulty">
     <tr>
-        <td><button>Ușor</button></td>
-        <td><button>Mediu</button></td>
-        <td><button>Greu</button></td>
+      <td style="border:none;"></td>
+      <td><button onclick="start()">Start</button></td>
+      <td style="border:none;"></td>
+    </tr>
+    <tr>
+        <td><button onclick="get_dif(1)">Ușor</button></td>
+        <td><button onclick="get_dif(2)">Mediu</button></td>
+        <td><button onclick="get_dif(3)">Greu</button></td>
     </tr>
 </table>
 
@@ -26,9 +33,9 @@
 <table>
     <tr>
         <td style="    font-size: 30px;">Variante</td>
-        <td class="border"><button>3</button></td>
-        <td class="border"><button>5</button></td>
-        <td class="border"><button>7</button></td>
+        <td class="border"><button onclick="get_ans(3)">3</button></td>
+        <td class="border"><button onclick="get_ans(5)">5</button></td>
+        <td class="border"><button onclick="get_ans(7)">7</button></td>
     </tr>
 </table>
 </div>
@@ -44,19 +51,24 @@
     <table>
         <tr>
             <td style="font-size: 30px;">Indicii</td>
-          <td class="border"><button>1</button></td>
-        <td class="border"><button>2</button></td>
-        <td class="border"><button>3</button></td>
+          <td class="border"><button onclick="get_hints(1)">1</button></td>
+          <td class="border"><button onclick="get_hints(2)">2</button></td>
+          <td class="border"><button onclick="get_hints(3)">3</button></td>
         </tr>
     </table>
     </div>
 
 </div>
+
+</div>
+
+
+<div id="testDiv"></div>
 </body>
 
 
   <script>
-    document.getElementById("toggleSwitch").addEventListener("change", function() {
+       document.getElementById("toggleSwitch").addEventListener("change", function() {
       var x = document.getElementById("indicii");
       
       x.style.display = this.checked ? "none" : "inline-block";
