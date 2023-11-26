@@ -56,10 +56,11 @@ function display_quest() {
     let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "flex";
     
-    let data = '';
-    data += `<div style="display: flex; justify-content: center; align-items: center; height: 100%;">`;
-    data += `<center><h3>Intrebare</h3></center>`;
-    data += `</div>`;
-    
-    testDiv.innerHTML = data;
+let data = '';
+data += `<div style="display: flex; justify-content: center; align-items: center; height: 100%;">`;
+data += `<h3 style="text-align: center;">Intrebare</h3>`;
+data += `</div>`;
+
+testDiv.innerHTML = data;
+
 }
