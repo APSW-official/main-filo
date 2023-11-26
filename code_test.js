@@ -57,10 +57,11 @@ function display_quest() {
     testDiv.style.display = "flex";
     
 let data = '';
-data += `<div style="display: flex; justify-content: center; align-items: center; height: 100%;">`;
-data += `<h3 style="text-align: center;">Intrebare</h3>`;
+data += `<div id="quest" style="display: flex; justify-content: center; align-items: center; height: 100%;">`;
+data += `<h3 style="text-align: center; margin: 0;">Intrebare</h3>`;
 data += `</div>`;
 
 testDiv.innerHTML = data;
+
 
 }
