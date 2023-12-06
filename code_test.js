@@ -5,7 +5,7 @@ let secureRandomNumber;
 let otherAns=[];
 let RAns,fil, filC;
 
-let jsonData;
+
 
 
 
@@ -44,8 +44,9 @@ function processFile() {
         // Process the workbook, for example, display the content in the outputDiv
         const sheetName = workbook.SheetNames[0];
         const sheet = workbook.Sheets[sheetName];
-        jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+        const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
+        console.log(1);
 }
 }
 
