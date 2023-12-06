@@ -37,8 +37,9 @@ function processFile() {
     xhr.responseType = 'arraybuffer';
 
     xhr.onload = function () {
-        const arrayBuffer = xhr.response;
-        const data = new Uint8Array(arrayBuffer);
+    const arrayBuffer = xhr.response;
+    const data = new Uint8Array(arrayBuffer);
+    try {
         const workbook = XLSX.read(data, { type: 'array' });
 
         // Process the workbook, for example, display the content in the outputDiv
@@ -47,6 +48,9 @@ function processFile() {
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
         console.log(s);
+    } catch (error) {
+        console.error('Error processing the workbook:', error);
+    }
 };
 }
 
