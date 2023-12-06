@@ -2,6 +2,8 @@ let dif, ans, hints,ok=0;
 
 let secureRandomNumber;
 
+let otherAns=[];
+let RAns,fil, filC;
 
 function start() {
 
@@ -34,7 +36,7 @@ if(ok){
     let startDiv=document.getElementById("startDiv");
     startDiv.style.display="none";
     
-    create_quest();
+    
 
     display_quest();
     
@@ -59,11 +61,12 @@ function get_hints(x) {
 
 function get_selAns(x){
     
-    console.log(x);
+    console.log(x===RAns);
 }
 
 
 function display_quest() {
+    create_quest();
     let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
     // testDiv.style.flexDirection = "column";
@@ -71,18 +74,34 @@ function display_quest() {
     // testDiv.style.height = "100%";
     
     let data = '';
-    data += `<div style=" margin-bottom: 200px;">`;
-    data += `<h3 style="text-align: center;">Intrebare</h3>`;
-    data += `</div>`;
-    
-    let table_ans = '<table class="ans" style="width: 100%;"> <tr>';
-    for (let i = 0; i < ans; i++) {
-        table_ans += `<td><button onclick="get_selAns(${i+1})">${i+1}</button></td>`;
+data += `<div style="margin-bottom: 200px; text-align: center;">`;
+data += `<h3>${fil + ' ' + filC}</h3>`;
+data += `</div>`;
+
+let table_ans = '<table class="ans" style="width: 100%;">';
+
+// Calculate the number of rows and columns
+const numRows = ans / 2;
+
+for (let row = 1; row <= numRows; row++) {
+    table_ans += '<tr>';
+
+    for (let col = 1; col <= 2; col++) {
+        const index = (row - 1) * 2 + col;
+        if (index <= ans) {
+            table_ans += `<td><button onclick="get_selAns(${index})">${otherAns[index]}</button></td>`;
+        }
     }
-    table_ans += " </tr></table>"; // Close the tr and table here
-    
-    // Combine both data and table_ans
-    data += table_ans;
+
+    table_ans += '</tr>';
+}
+
+table_ans += '</table>'; // Close the table here
+
+// Set the combined content to the testDiv
+data += table_ans;
+testDiv.innerHTML = data;
+
     
     // Set the combined content to the testDiv
     testDiv.innerHTML = data;
@@ -90,12 +109,23 @@ function display_quest() {
 
 
 function get_rand(x){
-    secureRandomNumber = window.crypto.getRandomValues(new Uint32Array(1))[0] % x + 1;
+    return window.crypto.getRandomValues(new Uint32Array(1))[0] % x + 1;
 }
 
 
 function create_quest(){
-    let fil=get_rand(25);
-    let RAns=get_rand(ans);
     
+    fil=get_rand(25);
+    filC=get_rand(20);
+    RAns=get_rand(ans);
+    otherAns[RAns]=fil;
+    console.log(RAns);
+    let i=1;
+    while(i<ans){
+        let aux1=get_rand(ans),aux2=get_rand(25);
+        console.log(i+" "+aux1);
+        if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
+            otherAns[aux1]=aux2;i++;
+        }
+    }
 }
