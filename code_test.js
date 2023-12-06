@@ -5,6 +5,8 @@ let secureRandomNumber;
 let otherAns=[];
 let RAns,fil, filC;
 
+const jsonData;
+
 function start() {
 
     if (!(document.getElementById("toggleSwitch").checked)) {
@@ -36,7 +38,7 @@ if(ok){
     let startDiv=document.getElementById("startDiv");
     startDiv.style.display="none";
     
-    
+    processFile();
 
     display_quest();
     
@@ -128,4 +130,29 @@ function create_quest(){
             otherAns[aux1]=aux2;i++;
         }
     }
+}
+
+
+
+
+
+function processFile() {
+    const filePath = 'filozofi.xlsx'; // Update with your actual file path
+    const outputDiv = document.getElementById('output');
+    let data1 = ""; // Declare data1 here to make it accessible within the entire function
+    let prevLet;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', filePath, true);
+    xhr.responseType = 'arraybuffer';
+
+    xhr.onload = function () {
+        const arrayBuffer = xhr.response;
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        // Process the workbook, for example, display the content in the outputDiv
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+        console.log(jsonData);
 }
