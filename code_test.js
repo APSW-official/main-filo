@@ -155,7 +155,7 @@ if(ok){
     let startDiv=document.getElementById("startDiv");
     startDiv.style.display="none";
     
-    //processFile();
+    processFile();
 
     display_quest();
     
