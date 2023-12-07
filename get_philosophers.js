@@ -21,7 +21,7 @@ function processFile() {
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         console.log(jsonData);
-        processFile2(jsonData);
+        
         prevLet=jsonData[0][1];
 data1 += `
     <tr class="modified-prevLet-bot" id="${prevLet.toUpperCase()}">
@@ -48,6 +48,6 @@ for (el of jsonData) {
 outputDiv.innerHTML = data1;
 
     };
-
+processFile2(jsonData);
     xhr.send();
 }
