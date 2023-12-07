@@ -22,7 +22,7 @@ function processFile() {
         console.log(jsonData);
 
         // Call processFile2 with the necessary data
-        processFile2(jsonData);
+        
 
         prevLet = jsonData[0][1];
         data1 += `
