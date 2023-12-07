@@ -28,7 +28,7 @@ function get_selAns(x){
 }
 
 function processFile() {
-    console.log(s);
+    console.log("s");
     const filePath = 'filozofi.xlsx'; // Update with your actual file path
     const outputDiv = document.getElementById('output');
     let data1 = ""; // Declare data1 here to make it accessible within the entire function
