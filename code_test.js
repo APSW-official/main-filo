@@ -41,7 +41,7 @@ function start() {
         let startDiv=document.getElementById("startDiv");
         startDiv.style.display="none";
         
-        processFile2();
+       // processFile2();
     
         display_quest();
         
