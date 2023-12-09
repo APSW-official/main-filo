@@ -88,14 +88,6 @@ function create_quest() {
     RAns = get_rand(ans);
     otherAns[RAns] = fil;
     console.log(RAns);
-    
-    function create_quest() {
-    fil = get_rand(25);
-    filC = get_rand(20);
-    RAns = get_rand(ans);
-    otherAns[RAns] = fil;
-    console.log(RAns);
-console.log(ans);
     for (let i = 1; i <=ans; i++) {
         console.log(i);
         if (i !== RAns) {
@@ -103,10 +95,8 @@ console.log(ans);
             otherAns[i] = get_rand(25);
         }
     }
-for(let i=0;i<=ans;i++)
-    console.log(otherAns[i]);
-}
-
+    for(let i=0;i<=ans;i++)
+        console.log(otherAns[i]);
 }
 
 function display_quest() {
