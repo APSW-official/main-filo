@@ -5,8 +5,26 @@ let secureRandomNumber;
 let otherAns=[];
 let RAns,fil, filC;
 
+function processFile2(){
+const filePath = 'filozofi2.xlsx'; // Update with your actual file path
+    const outputDiv = document.getElementById('output');
+    let data1 = "";
+    let prevLet;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', filePath, true);
+    xhr.responseType = 'arraybuffer';
 
+    xhr.onload = function () {
+        const arrayBuffer = xhr.response;
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
 
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+        console.log(jsonData);
+    };
+}
 
 
 
@@ -140,7 +158,7 @@ if(ok){
     let startDiv=document.getElementById("startDiv");
     startDiv.style.display="none";
     
-    processFile();
+    processFile2();
 
     display_quest();
     
