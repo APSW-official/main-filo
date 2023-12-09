@@ -131,9 +131,9 @@ function display_quest() {
         for (let col = 1; col <= 2; col++) {
             const index = (row - 1) * 2 + col;
             console.log(index);
-            if (index <= ans) {
+            
                 table_ans += `<td><button onclick="get_selAns(${index})">${otherAns[index]}</button></td>`;
-            }
+            
         }
 
         table_ans += '</tr>';
