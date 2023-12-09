@@ -96,12 +96,10 @@ function create_quest() {
     otherAns[RAns] = fil;
     console.log(RAns);
 
-    for (let i = 1; i < ans; i++) {
-        if (i !== RAns && typeof otherAns[i] === 'undefined') {
+    for (let i = 1; i <=ans; i++) {
+        if (i !== RAns) {
+            console.log(i);
             otherAns[i] = get_rand(25);
-        } else {
-            // If the condition is not met, decrement i to retry for the current index
-            i--;
         }
     }
 for(let i=0;i<=ans;i++)
