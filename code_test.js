@@ -5,6 +5,11 @@ let secureRandomNumber;
 let otherAns=[];
 let RAns,fil, filC;
 
+document.addEventListener('DOMContentLoaded', function() {
+    processFile2();
+});
+
+
 function start() {
 
     if (!(document.getElementById("toggleSwitch").checked)) {
