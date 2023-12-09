@@ -98,6 +98,8 @@ function create_quest() {
             }
             i++;
         }
+        else
+            i++;
     }
     for(let i=0;i<=ans;i++)
         console.log(otherAns[i]);
