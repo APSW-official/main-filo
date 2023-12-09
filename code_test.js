@@ -87,12 +87,13 @@ function create_quest() {
     filC=get_rand(20);
     RAns = get_rand(ans);
     otherAns[RAns] = fil;
-    let ap=[];
-    for (let i = 1; i <=ans; i++) {
+    let ap=[],i=1;
+    while(i<=ans){
         let aux=get_rand(25);
         if (ap[aux]!=1&&i!=RAns) {
             otherAns[i] = aux;
             ap[aux]=1;
+            i++;
         }
     }
     for(let i=0;i<=ans;i++)
