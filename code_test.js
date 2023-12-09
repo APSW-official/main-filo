@@ -88,14 +88,14 @@ function create_quest() {
     RAns = get_rand(ans);
     otherAns[RAns] = fil;
     console.log(RAns);
-    let i = 1;
+    
     function create_quest() {
     fil = get_rand(25);
     filC = get_rand(20);
     RAns = get_rand(ans);
     otherAns[RAns] = fil;
     console.log(RAns);
-
+console.log(ans);
     for (let i = 1; i <=ans; i++) {
         console.log(i);
         if (i !== RAns) {
