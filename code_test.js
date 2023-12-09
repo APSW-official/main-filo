@@ -35,6 +35,7 @@ function start() {
         let startDiv = document.getElementById("startDiv");
         startDiv.style.display = "none";
 
+        create_quest();
         display_quest();
     }
 }
@@ -59,8 +60,7 @@ function processFile2() {
         // ...
 
         // Continue with your logic or call other functions
-        create_quest();
-        display_quest();
+
     };
 
     xhr.send();
