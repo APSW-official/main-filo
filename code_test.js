@@ -89,12 +89,23 @@ function create_quest() {
     otherAns[RAns] = fil;
     console.log(RAns);
     let i = 1;
-    while (i < ans) {
-        if (i !== RAns ) {
+    function create_quest() {
+    fil = get_rand(25);
+    filC = get_rand(20);
+    RAns = get_rand(ans);
+    otherAns[RAns] = fil;
+    console.log(RAns);
+
+    for (let i = 1; i < ans; i++) {
+        if (i !== RAns && typeof otherAns[i] === 'undefined') {
             otherAns[i] = get_rand(25);
-            i++;
+        } else {
+            // If the condition is not met, decrement i to retry for the current index
+            i--;
         }
     }
+}
+
 }
 
 function display_quest() {
