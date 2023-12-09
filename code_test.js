@@ -84,15 +84,13 @@ function get_selAns(x) {
 
 function create_quest() {
     fil = get_rand(25);
-    filC = get_rand(20);
     RAns = get_rand(ans);
     otherAns[RAns] = fil;
-    console.log(RAns);
+    let ap=[];
     for (let i = 1; i <=ans; i++) {
-        console.log(i);
-        if (i !== RAns) {
-            
-            otherAns[i] = get_rand(25);
+        let aux=get_rand(25);
+        if (ap[aux]!=1&&i!=RAns) {
+            otherAns[i] = aux;
         }
     }
     for(let i=0;i<=ans;i++)
