@@ -84,6 +84,7 @@ function get_selAns(x) {
 
 function create_quest() {
     fil = get_rand(25);
+    filC=get_rand(20);
     RAns = get_rand(ans);
     otherAns[RAns] = fil;
     let ap=[];
@@ -91,6 +92,7 @@ function create_quest() {
         let aux=get_rand(25);
         if (ap[aux]!=1&&i!=RAns) {
             otherAns[i] = aux;
+            ap[aux]=1;
         }
     }
     for(let i=0;i<=ans;i++)
