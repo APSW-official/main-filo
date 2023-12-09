@@ -35,7 +35,7 @@ function start() {
         let startDiv = document.getElementById("startDiv");
         startDiv.style.display = "none";
 
-        create_quest();
+        
         display_quest();
     }
 }
