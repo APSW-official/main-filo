@@ -5,6 +5,48 @@ let secureRandomNumber;
 let otherAns=[];
 let RAns,fil, filC;
 
+function start() {
+
+    if (!(document.getElementById("toggleSwitch").checked)) {
+        // If the toggle is on, check for all variables to have values
+        if (dif !== undefined && ans !== undefined && hints !== undefined) {
+            console.log("All three variables have values");
+            console.log("Dif:", dif);
+            console.log("Ans:", ans);
+            console.log("Hints:", hints);ok=1;
+        } else {
+            console.log("Not all required variables have values");
+            alert("Please provide values for all inputs.");
+        }
+    } else {
+        // If the toggle is off, check if ans and dif have values
+        if (dif !== undefined && ans !== undefined) {
+            console.log("Only Dif and Ans have values");
+            console.log("Dif:", dif);
+            console.log("Ans:", ans);
+            ok=1;
+        } else {
+            console.log("Not all required variables have values");
+            alert("Please provide values for all inputs.");
+        }
+    }
+
+
+    if(ok){
+        let startDiv=document.getElementById("startDiv");
+        startDiv.style.display="none";
+        
+        processFile2();
+    
+        display_quest();
+        
+    }
+}
+
+
+
+
+
 function processFile2(){
 const filePath = 'filozofi2.xlsx'; // Update with your actual file path
     const outputDiv = document.getElementById('output');
@@ -44,16 +86,6 @@ function get_selAns(x){
     
     console.log(x===RAns);
 }
-
-function processFile2(filedata) {
-   
-    console.log(filedata);
-    
-    
-}
-
-
-
 function create_quest(){
     
     fil=get_rand(25);
@@ -127,44 +159,4 @@ function get_rand(x){
 
 
 
-function start() {
-
-    if (!(document.getElementById("toggleSwitch").checked)) {
-        // If the toggle is on, check for all variables to have values
-        if (dif !== undefined && ans !== undefined && hints !== undefined) {
-            console.log("All three variables have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            console.log("Hints:", hints);ok=1;
-        } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for all inputs.");
-        }
-    } else {
-        // If the toggle is off, check if ans and dif have values
-        if (dif !== undefined && ans !== undefined) {
-            console.log("Only Dif and Ans have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            ok=1;
-        } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for all inputs.");
-        }
-    }
-
-
-if(ok){
-    let startDiv=document.getElementById("startDiv");
-    startDiv.style.display="none";
-    
-    processFile2();
-
-    display_quest();
-    
-}
-
-
-
-}
 
