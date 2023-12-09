@@ -90,7 +90,7 @@ function create_quest() {
     let ap=[],i=1;
     while(i<=ans){
         let aux=get_rand(25);
-        console.log(i);
+        console.log(aux);
         if (ap[aux]!=1&&i!=RAns) {
             otherAns[i] = aux;
             ap[aux]=1;
