@@ -104,6 +104,8 @@ function create_quest() {
             i--;
         }
     }
+
+    console.log(otherAns);
 }
 
 }
