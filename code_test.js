@@ -97,8 +97,9 @@ function create_quest() {
     console.log(RAns);
 
     for (let i = 1; i <=ans; i++) {
+        console.log(i);
         if (i !== RAns) {
-            console.log(i);
+            
             otherAns[i] = get_rand(25);
         }
     }
