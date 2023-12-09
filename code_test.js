@@ -91,9 +91,11 @@ function create_quest() {
     while(i<=ans){
         let aux=get_rand(25);
         console.log(aux);
-        if (ap[aux]!=1&&i!=RAns) {
+        if (i!=RAns) {
+            if(ap[aux]!=1){
             otherAns[i] = aux;
             ap[aux]=1;
+            }
             i++;
         }
     }
