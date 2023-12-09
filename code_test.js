@@ -3,6 +3,69 @@ let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
 
+document.addEventListener('DOMContentLoaded', function () {
+    processFile2();
+});
+
+function start() {
+    if (!(document.getElementById("toggleSwitch").checked)) {
+        if (dif !== undefined && ans !== undefined && hints !== undefined) {
+            console.log("All three variables have values");
+            console.log("Dif:", dif);
+            console.log("Ans:", ans);
+            console.log("Hints:", hints);
+            ok = 1;
+        } else {
+            console.log("Not all required variables have values");
+            alert("Please provide values for all inputs.");
+        }
+    } else {
+        if (dif !== undefined && ans !== undefined) {
+            console.log("Only Dif and Ans have values");
+            console.log("Dif:", dif);
+            console.log("Ans:", ans);
+            ok = 1;
+        } else {
+            console.log("Not all required variables have values");
+            alert("Please provide values for all inputs.");
+        }
+    }
+
+    if (ok) {
+        let startDiv = document.getElementById("startDiv");
+        startDiv.style.display = "none";
+
+        display_quest();
+    }
+}
+
+function processFile2() {
+    const filePath = 'filozofi2.xlsx'; // Update with your actual file path
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', filePath, true);
+    xhr.responseType = 'arraybuffer';
+
+    xhr.onload = function () {
+        const arrayBuffer = xhr.response;
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+        console.log(jsonData);
+
+        // You can use jsonData here as needed
+        // ...
+
+        // Continue with your logic or call other functions
+        create_quest();
+        display_quest();
+    };
+
+    xhr.send();
+}
+
 function get_dif(x) {
     dif = x;
 }
@@ -17,10 +80,6 @@ function get_hints(x) {
 
 function get_selAns(x) {
     console.log(x === RAns);
-}
-
-function processFile2(filedata) {
-    console.log(filedata);
 }
 
 function create_quest() {
@@ -52,6 +111,7 @@ function display_quest() {
 
     let table_ans = '<table class="ans" style="width: 100%;">';
 
+    // Calculate the number of rows and columns
     const numRows = ans / 2;
 
     for (let row = 1; row <= numRows; row++) {
@@ -70,48 +130,11 @@ function display_quest() {
     table_ans += '</table>';
     data += table_ans;
     testDiv.innerHTML = data;
+
+    // Set the combined content to the testDiv
+    testDiv.innerHTML = data;
 }
 
 function get_rand(x) {
     return window.crypto.getRandomValues(new Uint32Array(1))[0] % x + 1;
 }
-
-function start() {
-    if (!(document.getElementById("toggleSwitch").checked)) {
-        if (dif !== undefined && ans !== undefined && hints !== undefined) {
-            console.log("All three variables have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            console.log("Hints:", hints);
-            ok = 1;
-        } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for all inputs.");
-        }
-    } else {
-        if (dif !== undefined && ans !== undefined) {
-            console.log("Only Dif and Ans have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            ok = 1;
-        } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for all inputs.");
-        }
-    }
-
-    if (ok) {
-        let startDiv = document.getElementById("startDiv");
-        startDiv.style.display = "none";
-
-        // Call the processFile function when needed
-        processFile();
-
-        display_quest();
-    }
-}
-
-// Exporting the necessary functions for use in other scripts
-window.get_selAns = get_selAns;
-window.get_rand = get_rand;
-window.processFile2 = processFile2;
