@@ -80,23 +80,47 @@ function get_selAns(x) {
     console.log(x === RAns);
 }
 
+function checkIf(a,c){
+    for(el of a){
+        if(el===c)
+            return false;
+    }
+    return true;
+}
+
+
 function create_quest(){
    processFile2(function(jsonData) {
         console.log(jsonData);   
        const len=jsonData.length;
         fil=get_rand(len);
         filC=get_rand(jsonData[fil].length);
-           console.log(fil,filC);
+        console.log(fil,filC);
         RAns=get_rand(ans);
         otherAns[RAns]=fil;
+        f[RAns]=1;
        console.log(RAns);
-        let i=1;
+        let i=0;
         while(i<ans){
-            let aux1=get_rand(ans),aux2=get_rand(len);
-            if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
-                otherAns[aux1]=aux2;i++;
-            }
+            let aux2=get_rand(25);
+        
+        if(checkIf(otherAns,aux2)){
+            if(!f[i])
+            otherAns[i]=aux2;
+            f[i]=1;
+            
         }
+        else{
+            do{
+                aux2=get_rand(25);
+            }while(checkIf(otherAns,aux2));
+        
+            if(!f[i])
+            otherAns[i]=aux2;
+            f[i]=1;
+        }
+        
+        i++;
     });
     console.log(otherAns);
 
