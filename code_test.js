@@ -106,7 +106,7 @@ function create_quest(){
         console.log(RAns);
         let i=0;
         while(i<ans){
-            let aux2=get_rand(25);
+            let aux2=get_rand(len);
         
             if(checkIf(otherAns,aux2)){
                 if(!f[i])
@@ -115,14 +115,14 @@ function create_quest(){
             }
             else{
                 do{
-                    aux2=get_rand(25);
+                    aux2=get_rand(len);
                 }while(checkIf(otherAns,aux2));
             
                 if(!f[i])
                 otherAns[i]=aux2;
                 f[i]=1;
             }
-            
+            console.log(i,f[i],aux2);
             i++;
         }
     });
