@@ -91,12 +91,13 @@ function create_quest(){
         let i=1;
         while(i<ans){
             let aux1=get_rand(ans),aux2=get_rand(len);
-            console.log(aux1,aux2);
             if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
                 otherAns[aux1]=aux2;i++;
             }
         }
     });
+    console.log(otherAns);
+    console.log(fil,filC);
 }
 function display_quest() {
     create_quest();
