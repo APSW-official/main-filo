@@ -53,9 +53,9 @@ function processFile2() {
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         datat=jsonData;
-        console.log(jsonData);
+        //console.log(jsonData);
     };
-
+console.log(datat);
    xhr.send(); 
 }
 
