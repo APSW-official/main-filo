@@ -33,7 +33,7 @@ function start() {
         let startDiv = document.getElementById("startDiv");
         startDiv.style.display = "none";
 
-        create_quest();
+        
         display_quest();
     }
 }
@@ -128,11 +128,11 @@ function create_quest(){
        
     });
     console.log("first");
-
+return(otherAns);
 }
 function display_quest() {
     
-    
+    const arr=create_quest();
     let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
 
@@ -145,7 +145,7 @@ function display_quest() {
 
     // Calculate the number of rows and columns
     const numRows = ans / 2;
-console.log(otherAns[0],otherAns[ans-1]);
+console.log(arr[0],arr[ans-1]);
     for (let row = 1; row <= numRows; row++) {
         table_ans += '<tr>';
 
