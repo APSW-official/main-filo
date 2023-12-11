@@ -63,7 +63,7 @@ function processFile2() {
 
     };
 
-    xhr.send();
+    
 }
 
 function get_dif(x) {
