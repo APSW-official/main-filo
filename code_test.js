@@ -84,10 +84,12 @@ function create_quest(){
    processFile2(function(jsonData) {
         console.log(jsonData);   
        const len=jsonData.length;
-       console.log(len);
+       console.log("js.len:",len);
         fil=get_rand(len);
-       console.log(jsonData[fil].length);
+       console.log(fil)
+       console.log("js.len.len",jsonData[fil].length);
         filC=get_rand(jsonData[fil].length);
+       console.log(filC);
         RAns=get_rand(ans);
         otherAns[RAns]=fil;
         let i=1;
