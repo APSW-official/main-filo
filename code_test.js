@@ -33,7 +33,7 @@ function start() {
         let startDiv = document.getElementById("startDiv");
         startDiv.style.display = "none";
 
-        
+        create_quest();
         display_quest();
     }
 }
@@ -131,7 +131,7 @@ function create_quest(){
 
 }
 function display_quest() {
-    create_quest();
+    
     
     let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
