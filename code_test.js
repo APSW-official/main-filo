@@ -83,11 +83,11 @@ function get_selAns(x) {
 function create_quest(){
    processFile2(function(jsonData) {
         console.log(jsonData);   
-       const len=jsonData.lenght;
+       const len=jsonData.length;
        console.log(len);
         fil=get_rand(len);
-       console.log(jsonData[fil].lenght);
-        filC=get_rand(jsonData[fil].lenght);
+       console.log(jsonData[fil].length);
+        filC=get_rand(jsonData[fil].length);
         RAns=get_rand(ans);
         otherAns[RAns]=fil;
         let i=1;
@@ -106,7 +106,7 @@ function display_quest() {
 
     let data = '';
     data += `<div style="margin-bottom: 200px; text-align: center;">`;
-    data += `<h3>Cui îi aparține citatul:${jsonData[fil][filC]}</h3>`;
+    data += `<h3>Cui îi aparține citatul:${fil,filC}</h3>`;
     data += `</div>`;
 
     let table_ans = '<table class="ans" style="width: 100%;">';
