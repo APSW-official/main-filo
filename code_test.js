@@ -122,7 +122,7 @@ function create_quest(){
                 otherAns[i]=aux2;
                 f[i]=1;
             }
-            console.log(i,f[i],aux2);
+            
             i++;
         }
        
@@ -132,7 +132,7 @@ function create_quest(){
 }
 function display_quest() {
     create_quest();
-    console.log(otherAns);
+    
     let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
 
@@ -151,9 +151,8 @@ function display_quest() {
 
         for (let col = 1; col <= 2; col++) {
             const index = (row - 1) * 2 + col;
-            
-            
-                table_ans += `<td><button onclick="get_selAns(${index-1})">${otherAns[index]}</button></td>`;
+            console.log(index);
+            table_ans += `<td><button onclick="get_selAns(${index-1})">${otherAns[index]}</button></td>`;
             
         }
 
