@@ -90,6 +90,7 @@ function create_quest(){
     otherAns[RAns]=fil;
     console.log(RAns);
     let i=1;
+    console.log(i);
     while(i<ans){
         let aux1=i,aux2=get_rand(25);
         if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
