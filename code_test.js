@@ -127,7 +127,7 @@ function create_quest(){
         }
        
     });
-    
+    console.log("first");
 
 }
 function display_quest() {
@@ -164,7 +164,9 @@ function display_quest() {
     testDiv.innerHTML = data;
 
     // Set the combined content to the testDiv
+    console.log("second");
     testDiv.innerHTML = data;
+    
 }
 
 function get_rand(x) {
