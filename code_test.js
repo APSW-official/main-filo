@@ -43,8 +43,7 @@ function processFile2() {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', filePath, true);
     xhr.responseType = 'arraybuffer';
-    let datat;
-    xhr.onload = function () {
+    const datat= xhr.onload = function () {
         const arrayBuffer = xhr.response;
         const data = new Uint8Array(arrayBuffer);
         const workbook = XLSX.read(data, { type: 'array' });
@@ -52,7 +51,7 @@ function processFile2() {
         const sheetName = workbook.SheetNames[0];
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-        datat=jsonData;
+        return (jsonData);
         //console.log(jsonData);
     };
 console.log(datat);
