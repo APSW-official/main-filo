@@ -145,7 +145,7 @@ function display_quest() {
 
     // Calculate the number of rows and columns
     const numRows = ans / 2;
-
+console.log(otherAns);
     for (let row = 1; row <= numRows; row++) {
         table_ans += '<tr>';
 
