@@ -86,6 +86,7 @@ function create_quest(){
        const len=jsonData.length;
         fil=get_rand(len);
         filC=get_rand(jsonData[fil].length);
+           console.log(fil,filC);
         RAns=get_rand(ans);
         otherAns[RAns]=fil;
         let i=1;
@@ -97,7 +98,7 @@ function create_quest(){
         }
     });
     console.log(otherAns);
-    console.log(fil,filC);
+
 }
 function display_quest() {
     create_quest();
