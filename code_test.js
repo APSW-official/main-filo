@@ -43,7 +43,7 @@ function processFile2() {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', filePath, true);
     xhr.responseType = 'arraybuffer';
-
+    let datat;
     xhr.onload = function () {
         const arrayBuffer = xhr.response;
         const data = new Uint8Array(arrayBuffer);
@@ -52,13 +52,8 @@ function processFile2() {
         const sheetName = workbook.SheetNames[0];
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+        datat=jsonData;
         console.log(jsonData);
-
-        // You can use jsonData here as needed
-        // ...
-
-        // Continue with your logic or call other functions
-
     };
 
    xhr.send(); 
