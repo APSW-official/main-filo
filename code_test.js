@@ -84,17 +84,14 @@ function create_quest(){
    processFile2(function(jsonData) {
         console.log(jsonData);   
        const len=jsonData.length;
-       console.log("js.len:",len);
         fil=get_rand(len);
-       console.log(fil)
-       console.log("js.len.len",jsonData[fil].length);
         filC=get_rand(jsonData[fil].length);
-       console.log(filC);
         RAns=get_rand(ans);
         otherAns[RAns]=fil;
         let i=1;
         while(i<ans){
             let aux1=get_rand(ans),aux2=get_rand(len);
+            console.log(aux1,aux2);
             if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
                 otherAns[aux1]=aux2;i++;
             }
@@ -139,5 +136,5 @@ function display_quest() {
 }
 
 function get_rand(x) {
-    return window.crypto.getRandomValues(new Uint32Array(1))[0] % x + 1;
+    return window.crypto.getRandomValues(new Uint32Array(1))[0] % x ;
 }
