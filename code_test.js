@@ -82,29 +82,22 @@ function get_selAns(x) {
     console.log(x === RAns);
 }
 
-function create_quest() {
-    fil = get_rand(25);
+function create_quest(){
+    
+    fil=get_rand(25);
     filC=get_rand(20);
-    RAns = get_rand(ans);
-    otherAns[RAns] = fil;
-    let ap=[],i=1;
-    while(i<=ans){
-        let aux=get_rand(25);
-        console.log(aux);
-        if (i!=RAns) {
-            if(ap[aux]!=1){
-            otherAns[i] = aux;
-            ap[aux]=1;
-            }
-            i++;
+    RAns=get_rand(ans);
+    otherAns[RAns]=fil;
+    console.log(RAns);
+    let i=1;
+    while(i<ans){
+        let aux1=get_rand(ans),aux2=get_rand(25);
+        console.log(i+" "+aux1);
+        if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
+            otherAns[aux1]=aux2;i++;
         }
-        else
-            i++;
     }
-    for(let i=0;i<=ans;i++)
-        console.log(otherAns[i]);
 }
-
 function display_quest() {
     create_quest();
     let testDiv = document.getElementById("testDiv");
