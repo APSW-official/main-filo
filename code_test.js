@@ -3,9 +3,7 @@ let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
 
-document.addEventListener('DOMContentLoaded', function () {
-    processFile2();
-});
+
 
 function start() {
     if (!(document.getElementById("toggleSwitch").checked)) {
@@ -83,16 +81,15 @@ function get_selAns(x) {
 }
 
 function create_quest(){
+    processFile2();
     
     fil=get_rand(25);
     filC=get_rand(20);
     RAns=get_rand(ans);
     otherAns[RAns]=fil;
-    console.log(RAns);
     let i=1;
     while(i<ans){
         let aux1=get_rand(ans),aux2=get_rand(25);
-        console.log(i+" "+aux1);
         if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
             otherAns[aux1]=aux2;i++;
         }
@@ -112,13 +109,13 @@ function display_quest() {
 
     // Calculate the number of rows and columns
     const numRows = ans / 2;
-console.log(numRows);
+
     for (let row = 1; row <= numRows; row++) {
         table_ans += '<tr>';
 
         for (let col = 1; col <= 2; col++) {
             const index = (row - 1) * 2 + col;
-            console.log(index,otherAns[index]);
+            
             
                 table_ans += `<td><button onclick="get_selAns(${index})">${otherAns[index]}</button></td>`;
             
