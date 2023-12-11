@@ -125,12 +125,14 @@ function create_quest(){
             console.log(i,f[i],aux2);
             i++;
         }
+       
     });
-    console.log(otherAns);
+    
 
 }
 function display_quest() {
     create_quest();
+    console.log(otherAns);
     let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
 
