@@ -89,6 +89,7 @@ function create_quest(){
            console.log(fil,filC);
         RAns=get_rand(ans);
         otherAns[RAns]=fil;
+       console.log(RAns);
         let i=1;
         while(i<ans){
             let aux1=get_rand(ans),aux2=get_rand(len);
