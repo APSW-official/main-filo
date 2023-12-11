@@ -92,14 +92,18 @@ function checkIf(a,c){
 function create_quest(){
    processFile2(function(jsonData) {
         console.log(jsonData);   
-       const len=jsonData.length;
+       
+        const len=jsonData.length;
+        let f=[0,0,0,0,0,0,0,0];
+       
         fil=get_rand(len);
         filC=get_rand(jsonData[fil].length);
         console.log(fil,filC);
         RAns=get_rand(ans);
         otherAns[RAns]=fil;
+        
         f[RAns]=1;
-       console.log(RAns);
+        console.log(RAns);
         let i=0;
         while(i<ans){
             let aux2=get_rand(25);
