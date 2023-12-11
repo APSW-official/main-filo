@@ -104,23 +104,23 @@ function create_quest(){
         while(i<ans){
             let aux2=get_rand(25);
         
-        if(checkIf(otherAns,aux2)){
-            if(!f[i])
-            otherAns[i]=aux2;
-            f[i]=1;
+            if(checkIf(otherAns,aux2)){
+                if(!f[i])
+                otherAns[i]=aux2;
+                f[i]=1;
+            }
+            else{
+                do{
+                    aux2=get_rand(25);
+                }while(checkIf(otherAns,aux2));
             
+                if(!f[i])
+                otherAns[i]=aux2;
+                f[i]=1;
+            }
+            
+            i++;
         }
-        else{
-            do{
-                aux2=get_rand(25);
-            }while(checkIf(otherAns,aux2));
-        
-            if(!f[i])
-            otherAns[i]=aux2;
-            f[i]=1;
-        }
-        
-        i++;
     });
     console.log(otherAns);
 
@@ -147,7 +147,7 @@ function display_quest() {
             const index = (row - 1) * 2 + col;
             
             
-                table_ans += `<td><button onclick="get_selAns(${index})">${otherAns[index]}</button></td>`;
+                table_ans += `<td><button onclick="get_selAns(${index-1})">${otherAns[index]}</button></td>`;
             
         }
 
