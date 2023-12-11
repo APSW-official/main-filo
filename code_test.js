@@ -82,20 +82,22 @@ function get_selAns(x) {
 
 function create_quest(){
    processFile2(function(jsonData) {
-    console.log(jsonData);
-    
-});
-    fil=get_rand(25);
-    filC=get_rand(20);
-    RAns=get_rand(ans);
-    otherAns[RAns]=fil;
-    let i=1;
-    while(i<ans){
-        let aux1=get_rand(ans),aux2=get_rand(25);
-        if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
-            otherAns[aux1]=aux2;i++;
+        console.log(jsonData);   
+       const len=jsonData.lenght;
+       console.log(len);
+        fil=get_rand(len);
+       console.log(jsonData[fil].lenght);
+        filC=get_rand(jsonData[fil].lenght);
+        RAns=get_rand(ans);
+        otherAns[RAns]=fil;
+        let i=1;
+        while(i<ans){
+            let aux1=get_rand(ans),aux2=get_rand(len);
+            if(aux1!==RAns&&typeof otherAns[aux1] === 'undefined'&&aux2!==fil){
+                otherAns[aux1]=aux2;i++;
+            }
         }
-    }
+    });
 }
 function display_quest() {
     create_quest();
@@ -104,7 +106,7 @@ function display_quest() {
 
     let data = '';
     data += `<div style="margin-bottom: 200px; text-align: center;">`;
-    data += `<h3>${fil + ' ' + filC}</h3>`;
+    data += `<h3>Cui îi aparține citatul:${jsonData[fil][filC]}</h3>`;
     data += `</div>`;
 
     let table_ans = '<table class="ans" style="width: 100%;">';
