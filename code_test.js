@@ -94,7 +94,7 @@ function create_quest(){
        // console.log(jsonData);   
        
         const len=jsonData.length;
-        let f=[0,0,0,0,0,0,0,0];
+        let uniqueValues = new Set();
        
         fil=get_rand(len);
         filC=get_rand(jsonData[fil].length);
@@ -102,30 +102,18 @@ function create_quest(){
         RAns=get_rand(ans);
         otherAns[RAns]=fil;
         
-        f[RAns]=1;
+        uniqueValues.add(fil);
+        for (let i = 0; i < ans; i++) {
+            let aux2;
         
-        let i=0;
-        while(i<ans){
-            let aux2=get_rand(len);
+            do {
+                aux2 = get_rand(25);
+            } while (uniqueValues.has(aux2));
         
-            if(checkIf(otherAns,aux2)){
-                if(!f[i])
-                otherAns[i]=aux2;
-                f[i]=1;
-            }
-            else{
-                do{
-                    aux2=get_rand(len);
-                }while(checkIf(otherAns,aux2));
-            
-                if(!f[i])
-                otherAns[i]=aux2;
-                f[i]=1;
-            }
-            
-            i++;
-        }
-        let testDiv = document.getElementById("testDiv");
+            otherAns[i] = aux2;
+            uniqueValues.add(aux2);
+    }
+    let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
 
     let data = '';
