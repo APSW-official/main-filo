@@ -89,68 +89,77 @@ function checkIf(a,c){
 }
 
 
-function create_quest(){
-   processFile2(function(jsonData) {
-       // console.log(jsonData);   
-       
-        const len=jsonData.length;
+function create_quest() {
+    processFile2(function (jsonData) {
+        const len = jsonData.length;
         let uniqueValues = new Set();
-       
-        fil=get_rand(len);
-        filC=get_rand(jsonData[fil].length);
-        
-        RAns=get_rand(ans);
-        otherAns[RAns]=fil;
-        
+
+        fil = get_rand(len);
+        filC = get_rand(jsonData[fil].length);
+
+        RAns = get_rand(ans);
+        otherAns[RAns] = fil;
+
         uniqueValues.add(fil);
+
+        // Make sure RAns is within the valid range
+        while (RAns >= ans) {
+            RAns = get_rand(ans);
+        }
+
         for (let i = 0; i < ans; i++) {
             let aux2;
-        
+
             do {
                 aux2 = get_rand(25);
             } while (uniqueValues.has(aux2));
-        
+
             otherAns[i] = aux2;
             uniqueValues.add(aux2);
-    }
-    let testDiv = document.getElementById("testDiv");
-    testDiv.style.display = "block";
-
-    let data = '';
-    data += `<div style="margin-bottom: 200px; text-align: center;">`;
-    data += `<h3>Cui îi aparține citatul:${jsonData[fil][filC]}</h3>`;
-    data += `</div>`;
-
-    let table_ans = '<table class="ans" style="width: 100%;">';
-
-    // Calculate the number of rows and columns
-    const numRows = ans / 2;
-
-    for (let row = 1; row <= numRows; row++) {
-        table_ans += '<tr>';
-
-        for (let col = 1; col <= 2; col++) {
-            const index = (row - 1) * 2 + col;
-            
-            table_ans += `<td><button onclick="get_selAns(${index-1})">${jsonData[otherAns[index-1]][0]}</button></td>`;
-            
         }
 
-        table_ans += '</tr>';
-    }
+        let testDiv = document.getElementById("testDiv");
+        testDiv.style.display = "block";
 
-    table_ans += '</table>';
-    data += table_ans;
-    testDiv.innerHTML = data;
+        let data = '';
+        data += `<div style="margin-bottom: 200px; text-align: center;">`;
+        data += `<h3>Cui îi aparține citatul:${jsonData[fil][filC]}</h3>`;
+        data += `</div>`;
 
-    // Set the combined content to the testDiv
-    console.log("second");
-    testDiv.innerHTML = data;
-    
+        let table_ans = '<table class="ans" style="width: 100%;">';
+
+        // Calculate the number of rows and columns
+        const numRows = ans / 2;
+
+        for (let row = 1; row <= numRows; row++) {
+            table_ans += '<tr>';
+
+            for (let col = 1; col <= 2; col++) {
+                const index = (row - 1) * 2 + col;
+
+                // Make sure otherAns[index-1] is within the valid range
+                while (otherAns[index - 1] >= len) {
+                    otherAns[index - 1] = get_rand(25);
+                }
+
+                table_ans += `<td><button onclick="get_selAns(${index - 1})">${jsonData[otherAns[index - 1]][0]}</button></td>`;
+            }
+
+            table_ans += '</tr>';
+        }
+
+        table_ans += '</table>';
+        data += table_ans;
+        testDiv.innerHTML = data;
+
+        // Set the combined content to the testDiv
+        console.log("second");
+        testDiv.innerHTML = data;
     });
-    
 
+    return otherAns;
 }
+
 /*function display_quest() {
     
     const arr=create_quest();
