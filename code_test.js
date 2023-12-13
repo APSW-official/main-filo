@@ -118,7 +118,7 @@ function create_quest(){
 
     let data = '';
     data += `<div style="margin-bottom: 200px; text-align: center;">`;
-    data += `<h3>Cui îi aparține citatul:${jsonData[fil][filC}</h3>`;
+    data += `<h3>Cui îi aparține citatul:${jsonData[fil][filC]</h3>`;
     data += `</div>`;
 
     let table_ans = '<table class="ans" style="width: 100%;">';
