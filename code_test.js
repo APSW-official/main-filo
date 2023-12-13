@@ -2,7 +2,7 @@ let dif, ans, hints, ok = 0,scor=0,selAns;
 let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
-let p=1;
+let p=1,y=0;
 
 
 
@@ -80,15 +80,18 @@ function get_hints(x) {
 
 function get_selAns(x) {
    selAns=x;
- 
+ y=1;
 }
 
 function check_selAns(){
-    scor+=selAns === RAns?1:0;
-    console.log(selAns === RAns);
-    if(p<=dif){
-        create_quest();
-        p++;
+    if(y){
+        scor+=selAns === RAns?1:0;
+        console.log(selAns === RAns);
+        if(p<=dif){
+            create_quest();
+            p++;
+        }
+        y=0;
     }
 }
 
@@ -123,7 +126,7 @@ function create_quest() {
             uniqueValues.add(aux2);
         }
          let testDiv = document.getElementById("testDiv");
-        console.log(fil,filC,jsonData[fil]);
+        console.log(fil,filC,RAns,scor);
 
        
         testDiv.style.display = "block";
