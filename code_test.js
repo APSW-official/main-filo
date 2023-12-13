@@ -2,6 +2,7 @@ let dif, ans, hints, ok = 0,scor=0,selAns;
 let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
+let p=0;
 
 
 
@@ -38,8 +39,8 @@ function start() {
         while(i<=dif){            
             create_quest();
             console.log(i);
-            i+=check_selAns();
-            
+            i+=p;
+            p=0;
         }
     }
 }
@@ -90,7 +91,7 @@ function get_selAns(x) {
 function check_selAns(){
     scor+=selAns === RAns?1:0;
     console.log(selAns === RAns);
-    return 1;
+    p=1;
 }
 
 function create_quest() {
