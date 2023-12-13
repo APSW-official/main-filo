@@ -1,4 +1,4 @@
-let dif, ans, hints, ok = 0;
+let dif, ans, hints, ok = 0,scor=0,selAns;
 let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
@@ -32,9 +32,15 @@ function start() {
     if (ok) {
         let startDiv = document.getElementById("startDiv");
         startDiv.style.display = "none";
-
-        
-        create_quest();
+        dif=dif*20;
+        let i=1;
+        console.log(dif);
+        while(i<=dif){            
+            create_quest();
+            console.log(i);
+            i+=check_selAns();
+            
+        }
     }
 }
 
@@ -77,17 +83,15 @@ function get_hints(x) {
 }
 
 function get_selAns(x) {
+   selAns=x;
+ 
+}
+
+function check_selAns(){
+    scor+=x === RAns?1:0;
     console.log(x === RAns);
+    return 1;
 }
-
-function checkIf(a,c){
-    for(el of a){
-        if(el===c)
-            return false;
-    }
-    return true;
-}
-
 
 function create_quest() {
     processFile2(function (jsonData) {
@@ -150,10 +154,11 @@ function create_quest() {
 
         table_ans += '</table>';
         data += table_ans;
+        data+=`<button onclick="check_selAns()">${}</button>`;
         testDiv.innerHTML = data;
 
         // Set the combined content to the testDiv
-        console.log("second");
+        
         testDiv.innerHTML = data;
     });
 
