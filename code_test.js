@@ -133,7 +133,7 @@ return(otherAns);
 function display_quest() {
     
     const arr=create_quest();
-console.log(arr[1]);
+console.log(arr);
     let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
 
