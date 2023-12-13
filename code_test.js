@@ -125,9 +125,9 @@ function create_quest(){
             
             i++;
         }
-       
+       console.log(otherAns);
     });
-    console.log("first");
+    console.log(otherAns,"first");
 return(otherAns);
 }
 function display_quest() {
@@ -145,13 +145,13 @@ function display_quest() {
 
     // Calculate the number of rows and columns
     const numRows = ans / 2;
-console.log(arr[0],arr[ans-1]);
+
     for (let row = 1; row <= numRows; row++) {
         table_ans += '<tr>';
 
         for (let col = 1; col <= 2; col++) {
             const index = (row - 1) * 2 + col;
-            console.log(otherAns[index]);
+            //console.log(otherAns[index]);
             table_ans += `<td><button onclick="get_selAns(${index-1})">${otherAns[index]}</button></td>`;
             
         }
