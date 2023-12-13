@@ -2,7 +2,7 @@ let dif, ans, hints, ok = 0,scor=0,selAns;
 let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
-let p=0;
+let p=1;
 
 
 
@@ -34,14 +34,9 @@ function start() {
         let startDiv = document.getElementById("startDiv");
         startDiv.style.display = "none";
         dif=dif*20;
-        let i=1;
         console.log(dif);
-        while(i<=dif){            
-            create_quest();
-            console.log(i);
-            i+=p;
-            p=0;
-        }
+        create_quest();
+         
     }
 }
 
@@ -91,7 +86,10 @@ function get_selAns(x) {
 function check_selAns(){
     scor+=selAns === RAns?1:0;
     console.log(selAns === RAns);
-    p=1;
+    if(p<=dif){
+        create_quest();
+        p++;
+    }
 }
 
 function create_quest() {
