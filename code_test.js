@@ -120,6 +120,7 @@ function create_quest() {
             otherAns[i] = aux2;
             uniqueValues.add(aux2);
         }
+        console.log(fil,filC,otherAns);
 
         let testDiv = document.getElementById("testDiv");
         testDiv.style.display = "block";
