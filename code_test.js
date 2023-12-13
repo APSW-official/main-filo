@@ -154,7 +154,7 @@ function create_quest() {
 
         table_ans += '</table>';
         data += table_ans;
-        data+=`<button onclick="check_selAns()">${}</button>`;
+        data+=`<button onclick="check_selAns()">Trimite</button>`;
         testDiv.innerHTML = data;
 
         // Set the combined content to the testDiv
