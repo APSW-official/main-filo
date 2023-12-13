@@ -143,7 +143,7 @@ function create_quest(){
 
         for (let col = 1; col <= 2; col++) {
             const index = (row - 1) * 2 + col;
-            console.log(otherAns[index]);
+            console.log(index,otherAns[index]);
             table_ans += `<td><button onclick="get_selAns(${index-1})">${otherAns[index]}</button></td>`;
             
         }
