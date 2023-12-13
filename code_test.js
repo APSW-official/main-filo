@@ -34,7 +34,7 @@ function start() {
         startDiv.style.display = "none";
 
         
-        display_quest();
+        create_quest();
     }
 }
 
@@ -125,16 +125,7 @@ function create_quest(){
             
             i++;
         }
-       
-    });
-    
-return(otherAns);
-}
-function display_quest() {
-    
-    const arr=create_quest();
-console.log(arr);
-    let testDiv = document.getElementById("testDiv");
+        let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
 
     let data = '';
@@ -168,7 +159,16 @@ console.log(arr);
     console.log("second");
     testDiv.innerHTML = data;
     
+    });
+    
+return(otherAns);
 }
+/*function display_quest() {
+    
+    const arr=create_quest();
+console.log(arr);
+   
+}*/
 
 function get_rand(x) {
     return window.crypto.getRandomValues(new Uint32Array(1))[0] % x ;
