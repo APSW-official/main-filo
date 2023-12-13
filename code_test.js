@@ -89,7 +89,7 @@ function get_selAns(x) {
 
 function check_selAns(){
     scor+=selAns === RAns?1:0;
-    console.log(x === RAns);
+    console.log(selAns === RAns);
     return 1;
 }
 
