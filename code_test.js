@@ -118,7 +118,7 @@ function create_quest(){
 
     let data = '';
     data += `<div style="margin-bottom: 200px; text-align: center;">`;
-    data += `<h3>Cui îi aparține citatul:${fil,filC}</h3>`;
+    data += `<h3>Cui îi aparține citatul:${jsonData[fil][filC}</h3>`;
     data += `</div>`;
 
     let table_ans = '<table class="ans" style="width: 100%;">';
@@ -132,7 +132,7 @@ function create_quest(){
         for (let col = 1; col <= 2; col++) {
             const index = (row - 1) * 2 + col;
             
-            table_ans += `<td><button onclick="get_selAns(${index-1})">${otherAns[index-1]}</button></td>`;
+            table_ans += `<td><button onclick="get_selAns(${index-1})">${jsonData[otherAns[index-1]]}</button></td>`;
             
         }
 
