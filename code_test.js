@@ -132,7 +132,7 @@ function create_quest(){
         for (let col = 1; col <= 2; col++) {
             const index = (row - 1) * 2 + col;
             
-            table_ans += `<td><button onclick="get_selAns(${index-1})">${jsonData[otherAns[index-1]]}</button></td>`;
+            table_ans += `<td><button onclick="get_selAns(${index-1})">${jsonData[otherAns[index-1]][0]}</button></td>`;
             
         }
 
