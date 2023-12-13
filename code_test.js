@@ -109,7 +109,7 @@ function create_quest() {
         while (RAns >= ans) {
             RAns = get_rand(ans);
         }
-        while (filC>2) {
+        while (filC<2) {
             filC = get_rand(jsonData[fil].length);
         }
         for (let i = 0; i < ans; i++) {
