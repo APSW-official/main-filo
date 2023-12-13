@@ -125,15 +125,15 @@ function create_quest(){
             
             i++;
         }
-       console.log(otherAns,"3rd");
+       
     });
-    console.log(otherAns,"first");
+    
 return(otherAns);
 }
 function display_quest() {
     
     const arr=create_quest();
-console.log(arr);
+console.log(arr[1]);
     let testDiv = document.getElementById("testDiv");
     testDiv.style.display = "block";
 
