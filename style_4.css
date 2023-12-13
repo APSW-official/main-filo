@@ -159,6 +159,8 @@ table button:active {
 
 #testDiv{
   display: none;
-  
-  
+}
+
+#score{
+  display: none;
 }
