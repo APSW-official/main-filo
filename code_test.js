@@ -125,7 +125,7 @@ function create_quest(){
             
             i++;
         }
-       console.log(otherAns);
+       console.log(otherAns,"3rd");
     });
     console.log(otherAns,"first");
 return(otherAns);
