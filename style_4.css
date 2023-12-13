@@ -159,6 +159,11 @@ table button:active {
 
 #testDiv{
   display: none;
+   position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #ccc; /* Adjust the background color as needed */
+            z-index: 1; /* Place underDiv below the overDiv */
 }
 
 #score{
