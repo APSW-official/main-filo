@@ -109,20 +109,23 @@ function create_quest() {
         while (RAns >= ans) {
             RAns = get_rand(ans);
         }
-
+        while (filC>2) {
+            filC = get_rand(jsonData[fil].length);
+        }
         for (let i = 0; i < ans; i++) {
             let aux2;
 
             do {
-                aux2 = get_rand(25);
+                aux2 = get_rand(len);
             } while (uniqueValues.has(aux2));
 
             otherAns[i] = aux2;
             uniqueValues.add(aux2);
         }
-        console.log(fil,filC,otherAns);
+         let testDiv = document.getElementById("testDiv");
+        console.log(fil,filC,jsonData[fil]);
 
-        let testDiv = document.getElementById("testDiv");
+       
         testDiv.style.display = "block";
 
         let data = '';
@@ -173,5 +176,5 @@ console.log(arr);
 }*/
 
 function get_rand(x) {
-    return window.crypto.getRandomValues(new Uint32Array(1))[0] % x ;
+    return window.crypto.getRandomValues(new Uint32Array(1))[0] % x;
 }
