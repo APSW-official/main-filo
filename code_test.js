@@ -121,9 +121,10 @@ function create_quest() {
             do {
                 aux2 = get_rand(len);
             } while (uniqueValues.has(aux2));
-
+            if(i!==RAns){
             otherAns[i] = aux2;
             uniqueValues.add(aux2);
+            }
         }
          let testDiv = document.getElementById("testDiv");
         console.log(fil,jsonData[fil],filC,p,RAns,otherAns);
