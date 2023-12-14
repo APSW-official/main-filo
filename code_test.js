@@ -3,7 +3,7 @@ let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
 let p=1,y=0;
-
+let testDiv = document.getElementById("testDiv");
 
 
 function start() {
@@ -91,6 +91,11 @@ function check_selAns(){
             create_quest();
             p++;
         }
+        else{
+            testDiv.style.display = "none";
+            let scoreDiv=document.getElementById("score");
+            scoreDiv.style.display = "block";
+        }
         y=0;
     }
 }
@@ -126,10 +131,8 @@ function create_quest() {
             uniqueValues.add(aux2);
             }
         }
-         let testDiv = document.getElementById("testDiv");
+         
         console.log(fil,jsonData[fil],filC,p,RAns,otherAns);
-
-       
         testDiv.style.display = "block";
 
         let data = '';
