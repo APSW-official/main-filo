@@ -3,7 +3,7 @@ let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
 let p=1,y=0;
-let testDiv = document.getElementById("testDiv");
+let testDiv;
 
 
 function start() {
@@ -133,6 +133,7 @@ function create_quest() {
         }
          
         console.log(fil,jsonData[fil],filC,p,RAns,otherAns);
+        testDiv = document.getElementById("testDiv");
         testDiv.style.display = "block";
 
         let data = '';
