@@ -96,9 +96,10 @@ function check_selAns(){
             let scoreDiv=document.getElementById("score");
             scoreDiv.style.display = "block";
             let dataScore=`<div id="displayScore">`;
-            dataScore+=`<h3>Ai obținut<p>${score}</h3>`;
+            dataScore+=`<h3>Ai obținut<p>${scor}</h3>`;
 
             dataScore+=`</div>`;
+             scoreDiv.innerHTML = dataScore;
         }
         y=0;
     }
@@ -174,7 +175,7 @@ function create_quest() {
 
         // Set the combined content to the testDiv
         
-        testDiv.innerHTML = data;
+        
     });
 
     return otherAns;
