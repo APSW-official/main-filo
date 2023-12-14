@@ -95,6 +95,7 @@ function check_selAns(){
             testDiv.style.display = "none";
             let scoreDiv=document.getElementById("score");
             scoreDiv.style.display = "block";
+            let dataScore;
         }
         y=0;
     }
