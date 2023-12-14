@@ -95,7 +95,7 @@ function check_selAns(){
             testDiv.style.display = "none";
             let scoreDiv=document.getElementById("score");
             scoreDiv.style.display = "block";
-            let dataScore+=`<div id="displayScore">`;
+            let dataScore=`<div id="displayScore">`;
             dataScore+=`<h3>Ai obținut<p>${score}</h3>`;
 
             dataScore+=`</div>`;
