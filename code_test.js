@@ -136,7 +136,7 @@ function create_quest() {
             }
         }
          
-        console.log(fil,jsonData[fil],filC,p,RAns,otherAns);
+        console.log(p,RAns);
         testDiv = document.getElementById("testDiv");
         testDiv.style.display = "block";
 
