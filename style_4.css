@@ -171,3 +171,10 @@ table button:active {
             align-items: center;
             justify-content: center;
 }
+
+#displayScore{
+   width: 200px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    border: 1px solid white;
+    background-color: transparent;
+}
