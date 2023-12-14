@@ -126,7 +126,7 @@ function create_quest() {
             uniqueValues.add(aux2);
         }
          let testDiv = document.getElementById("testDiv");
-        console.log(fil,jsonData[fil],filC,p,RAns);
+        console.log(fil,jsonData[fil],filC,p,RAns,otherAns);
 
        
         testDiv.style.display = "block";
