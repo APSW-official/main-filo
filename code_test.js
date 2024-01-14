@@ -178,7 +178,7 @@ function create_quest() {
         
     });
 
-    return otherAns;
+    
 }
 
 /*function display_quest() {
