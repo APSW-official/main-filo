@@ -123,27 +123,37 @@ function create_quest() {
         while (RAns >= ans) {
             RAns = get_rand(ans);
         }
-        while (filC < 2) {
+        while (filC<2) {
             filC = get_rand(jsonData[fil].length);
         }
+        for (let i = 0; i < ans; i++) {
+            let aux2;
 
-        let data = document.createElement('div');
-        data.style.marginBottom = '200px';
-        data.style.textAlign = 'center';
-        
-        let heading = document.createElement('h3');
-        heading.textContent = jsonData[fil][filC];
-        data.appendChild(heading);
+            do {
+                aux2 = get_rand(len);
+            } while (uniqueValues.has(aux2));
+            if(i!==RAns){
+            otherAns[i] = aux2;
+            uniqueValues.add(aux2);
+            }
+        }
+         
+        console.log(p,RAns);
+        testDiv = document.getElementById("testDiv");
+        testDiv.style.display = "block";
 
-        let table = document.createElement('table');
-        table.className = 'ans';
-        table.style.width = '100%';
+        let data = '';
+        data += `<div style="margin-bottom: 200px; text-align: center;">`;
+        data += `<h3>${jsonData[fil][filC]}</h3>`;
+        data += `</div>`;
+
+        let table_ans = '<table class="ans" style="width: 100%;">';
 
         // Calculate the number of rows and columns
         const numRows = ans / 2;
 
         for (let row = 1; row <= numRows; row++) {
-            let tr = document.createElement('tr');
+            table_ans += '<tr>';
 
             for (let col = 1; col <= 2; col++) {
                 const index = (row - 1) * 2 + col;
@@ -153,33 +163,22 @@ function create_quest() {
                     otherAns[index - 1] = get_rand(25);
                 }
 
-                let td = document.createElement('td');
-                let button = document.createElement('button');
-                button.textContent = jsonData[otherAns[index - 1]][0];
-                button.onclick = function () {
-                    get_selAns(index - 1);
-                };
-                td.appendChild(button);
-                tr.appendChild(td);
+                table_ans += `<td><button onclick="get_selAns(${index - 1})">${jsonData[otherAns[index - 1]][0]}</button></td>`;
             }
 
-            table.appendChild(tr);
+            table_ans += '</tr>';
         }
 
-        data.appendChild(table);
+        table_ans += '</table>';
+        data += table_ans;
+        data+=`<button onclick="check_selAns()">Trimite</button>`;
+        testDiv.innerHTML = data;
 
-        let button = document.createElement('button');
-        button.textContent = 'Trimite';
-        button.onclick = check_selAns;
-        data.appendChild(button);
-
-        testDiv = document.getElementById('testDiv');
-        testDiv.innerHTML = '';
-        testDiv.style.display = 'block';
-        testDiv.appendChild(data);
+        // Set the combined content to the testDiv
+        
+        
     });
 }
-
 
 /*function display_quest() {
     
