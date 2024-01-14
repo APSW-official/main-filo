@@ -107,85 +107,80 @@ function check_selAns(){
 }
 
 function create_quest() {
-    processFile2(function (jsonData) {
-        const len = jsonData.length;
-        let uniqueValues = new Set();
+    {
+        processFile2(function (jsonData) {
+            const len = jsonData.length;
+            let uniqueValues = new Set();
 
-        fil = get_rand(len);
-        filC = get_rand(jsonData[fil].length);
-
-        RAns = get_rand(ans);
-        otherAns[RAns] = fil;
-
-        uniqueValues.add(fil);
-
-        // Make sure RAns is within the valid range
-        while (RAns >= ans) {
-            RAns = get_rand(ans);
-        }
-        while (filC<2) {
+            fil = get_rand(len);
             filC = get_rand(jsonData[fil].length);
-        }
-        for (let i = 0; i < ans; i++) {
-            let aux2;
 
-            do {
-                aux2 = get_rand(len);
-            } while (uniqueValues.has(aux2));
-            if(i!==RAns){
-            otherAns[i] = aux2;
-            uniqueValues.add(aux2);
+            RAns = get_rand(ans);
+            otherAns[RAns] = fil;
+
+            uniqueValues.add(fil);
+
+            // Make sure RAns is within the valid range
+            while (RAns >= ans) {
+                RAns = get_rand(ans);
             }
-        }
-         
-        console.log(p,RAns);
-        testDiv = document.getElementById("testDiv");
-        testDiv.style.display = "block";
+            while (filC < 2) {
+                filC = get_rand(jsonData[fil].length);
+            }
+            for (let i = 0; i < ans; i++) {
+                let aux2;
 
-        let data = '';
-        data += `<div style="margin-bottom: 200px; text-align: center;">`;
-        data += `<h3>${jsonData[fil][filC]}</h3>`;
-        data += `</div>`;
+                do {
+                    aux2 = get_rand(len);
+                } while (uniqueValues.has(aux2));
+                if (i !== RAns) {
+                    otherAns[i] = aux2;
+                    uniqueValues.add(aux2);
+                }
+            }
 
-        let table_ans = '<table class="ans" style="width: 100%;">';
+            console.log(p, RAns);
+            testDiv = document.getElementById("testDiv");
+            testDiv.style.display = "block";
 
-        // Calculate the number of rows and columns
-        const numRows = ans / 2;
+            let data = '';
+            data += `<div style="margin-bottom: 200px; text-align: center;">`;
+            data += `<h3>${jsonData[fil][filC]}</h3>`;
+            data += `</div>`;
 
-        for (let row = 1; row <= numRows; row++) {
-            table_ans += '<tr>';
+            let table_ans = '<table class="ans" style="width: 100%;">';
 
-            for (let col = 1; col <= 2; col++) {
-                const index = (row - 1) * 2 + col;
+            // Calculate the number of rows and columns
+            const numRows = ans / 2;
 
-                // Make sure otherAns[index-1] is within the valid range
-                while (otherAns[index - 1] >= len) {
-                    otherAns[index - 1] = get_rand(25);
+            for (let row = 1; row <= numRows; row++) {
+                table_ans += '<tr>';
+
+                for (let col = 1; col <= 2; col++) {
+                    const index = (row - 1) * 2 + col;
+
+                    // Make sure otherAns[index-1] is within the valid range
+                    while (otherAns[index - 1] >= len) {
+                        otherAns[index - 1] = get_rand(25);
+                    }
+
+                    table_ans += `<td><button onclick="get_selAns(${index - 1})">${jsonData[otherAns[index - 1]][0]}</button></td>`;
                 }
 
-                table_ans += `<td><button onclick="get_selAns(${index - 1})">${jsonData[otherAns[index - 1]][0]}</button></td>`;
+                table_ans += '</tr>';
             }
 
-            table_ans += '</tr>';
-        }
+            table_ans += '</table>';
+            data += table_ans;
+            data += `<button onclick="check_selAns()">Trimite</button>`;
+            testDiv.innerHTML = data;
 
-        table_ans += '</table>';
-        data += table_ans;
-        data+=`<button onclick="check_selAns()">Trimite</button>`;
-        testDiv.innerHTML = data;
-
-        // Set the combined content to the testDiv
-        
-        
-    });
+            // Set the combined content to the testDiv
+        });
+    }
+    // Variables declared inside the block will be out of scope here
 }
 
-/*function display_quest() {
-    
-    const arr=create_quest();
-console.log(arr);
-   
-}*/
 
 function get_rand(x) {
     return window.crypto.getRandomValues(new Uint32Array(1))[0] % x;
