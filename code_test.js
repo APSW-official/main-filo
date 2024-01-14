@@ -88,8 +88,9 @@ function check_selAns(){
         scor+=selAns === RAns?1:0;
         console.log(selAns === RAns);
         if(p<=dif){
-            create_quest();
+            y=0;
             p++;
+            create_quest();
         }
         else{
             testDiv.style.display = "none";
@@ -101,7 +102,7 @@ function check_selAns(){
             dataScore+=`</div>`;
              scoreDiv.innerHTML = dataScore;
         }
-        y=0;
+        
     }
 }
 
