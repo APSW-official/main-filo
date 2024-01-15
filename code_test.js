@@ -7,7 +7,7 @@ let testDiv;
 
 funtion location(){
     let div=document.getElementById("startDiv");
-    console.log(div.style.display);
+    console.log(div.style);
     
 }
 function start() {
