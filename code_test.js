@@ -5,7 +5,7 @@ let RAns, fil, filC;
 let p=1,y=0;
 let testDiv;
 
-function location(){
+function get_loc(){
     let div=document.getElementById("startDiv");
     console.log(div.style);
     
