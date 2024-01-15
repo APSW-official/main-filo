@@ -5,7 +5,11 @@ let RAns, fil, filC;
 let p=1,y=0;
 let testDiv;
 
-
+funtion location(){
+    let div=document.getElementById("startDiv");
+    console.log(div.style.display);
+    
+}
 function start() {
     if (!(document.getElementById("toggleSwitch").checked)) {
         if (dif !== undefined && ans !== undefined && hints !== undefined) {
