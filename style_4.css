@@ -177,4 +177,5 @@ table button:active {
     height: 200px; /* Adjust height as needed */
     border: 1px solid white;
     background-color: transparent;
+    display: center;
 }
