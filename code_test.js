@@ -192,25 +192,15 @@ function get_rand(x) {
 
 
 
-
-let dif, ans, ok = 0, scor = 0, selAns;
+let dif, ans, hints, ok = 0, scor = 0, selAns;
+let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
 let p = 1, y = 0;
 let testDiv;
 
 function start() {
-    if (!document.getElementById("toggleSwitch").checked) {
-        if (dif !== undefined && ans !== undefined) {
-            console.log("Both Dif and Ans have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            ok = 1;
-        } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for Dif and Ans inputs.");
-        }
-    } else {
+    if (!(document.getElementById("toggleSwitch").checked)) {
         if (dif !== undefined && ans !== undefined && hints !== undefined) {
             console.log("All three variables have values");
             console.log("Dif:", dif);
@@ -221,11 +211,22 @@ function start() {
             console.log("Not all required variables have values");
             alert("Please provide values for all inputs.");
         }
+    } else {
+        if (dif !== undefined && ans !== undefined) {
+            console.log("Only Dif and Ans have values");
+            console.log("Dif:", dif);
+            console.log("Ans:", ans);
+            ok = 1;
+        } else {
+            console.log("Not all required variables have values");
+            alert("Please provide values for all inputs.");
+        }
     }
 
     if (ok) {
-        document.getElementById("startDiv").style.display = "none";
-        dif *= 20;
+        let startDiv = document.getElementById("startDiv");
+        startDiv.style.display = "none";
+        dif = dif * 20;
         console.log(dif);
         create_quest();
     }
@@ -250,6 +251,18 @@ function processFile2(callback) {
     };
 
     xhr.send();
+}
+
+function get_dif(x) {
+    dif = x;
+}
+
+function get_ans(x) {
+    ans = x;
+}
+
+function get_hints(x) {
+    hints = x;
 }
 
 function get_selAns(x) {
@@ -346,7 +359,17 @@ function create_quest() {
     });
 }
 
+function get_loc() {
+    let div = document.getElementById("startDiv");
+    console.log(div.id);
+}
+
 function get_rand(x) {
     return window.crypto.getRandomValues(new Uint32Array(1))[0] % x;
 }
 
+document.getElementById("toggleSwitch").addEventListener("change", function () {
+    var x = document.getElementById("indicii");
+
+    x.style.display = this.checked ? "none" : "inline-block";
+});
