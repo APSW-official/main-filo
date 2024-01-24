@@ -360,15 +360,14 @@ function create_quest() {
     });
 }
 
-function get_loc() {
-    let div = document.getElementById("startDiv");
-     var computedStyle = window.getComputedStyle(div);
-    if(computedStyle.display!=='none')
-        return "start.html";
-    else
-        return "solo.html";
-}
-
+ function get_loc() {
+        let div = document.getElementById("startDiv");
+        var computedStyle = window.getComputedStyle(div);
+        if (computedStyle.display !== 'none')
+             window.location.href = "start.html";  // Uncomment this line to actually redirect
+        else
+            window.location.href = "solo.html";  // Uncomment this line to actually redirect
+    }
 function get_rand(x) {
     return window.crypto.getRandomValues(new Uint32Array(1))[0] % x;
 }
