@@ -159,11 +159,11 @@ function fil_page(filId){
     <div style="text-align: left;">
     <h4>${dAta[filId][0]} a spus:</h4>
     `;
-data+='<ul>'
-    for(el of dAta[filId])
-        data+=`<li>${el}</li>`
-data+='</ul>'
-    
+    data+='<ul>'
+        for(el of dAta[filId])
+            data+=`<li>${el}</li>`
+    data+='</ul>'
+    output.innerHTML=data;
 }
 
 
