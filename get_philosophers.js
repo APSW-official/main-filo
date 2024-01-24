@@ -150,6 +150,20 @@ function fil_page(filId){
     console.log(dAta[filId][0]);
     let startDiv = document.getElementById("conteiner");
         startDiv.style.display = "none";
+    let outputDiv=document.getElemetById("output");
+    output.style.display="block";
+    let data='';
+    data+=`<div style="margin-bottom: 100px; text-align: center;"> 
+    <h3>${dAta[filId][0]}</h3>
+    </div>
+    <div style="text-align: left;">
+    <h4>${dAta[filId][0]} a spus:</h4>
+    `;
+data+='<ul>'
+    for(el of dAta[filId])
+        data+=`<li>${el}</li>`
+data+='</ul>'
+    
 }
 
 
