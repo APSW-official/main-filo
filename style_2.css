@@ -118,3 +118,16 @@ table#output {
     top: 50px;
 }
 
+
+ ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+  }
+
+  li::before {
+    content: '\2022'; /* Unicode character for a bullet point */
+    color: #ff0565; /* Change the color of the bullet point */
+    font-size: 20px; /* Adjust the size of the bullet point */
+    margin-right: 10px; /* Adjust the space between the bullet point and text */
+  }
+
