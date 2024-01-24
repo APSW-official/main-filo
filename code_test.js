@@ -369,8 +369,9 @@ function get_rand(x) {
     return window.crypto.getRandomValues(new Uint32Array(1))[0] % x;
 }
 
-document.getElementById("toggleSwitch").addEventListener("change", function () {
+/*document.getElementById("toggleSwitch").addEventListener("change", function () {
     var x = document.getElementById("indicii");
 
     x.style.display = this.checked ? "none" : "inline-block";
 });
+*/
