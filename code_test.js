@@ -363,6 +363,7 @@ function create_quest() {
  function get_loc() {
         let div = document.getElementById("startDiv");
         var computedStyle = window.getComputedStyle(div);
+     console.log(computedStyle.display !== 'none')
         if (computedStyle.display !== 'none')
              window.location.href = "start.html";  // Uncomment this line to actually redirect
         else
