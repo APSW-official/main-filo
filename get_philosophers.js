@@ -81,7 +81,7 @@ function setupButtonEventListeners() {
 }
 
 
-
+let dAta;
 function processFile() {
     const filePath = 'filozofi.xlsx'; // Update with your actual file path
     const outputDiv = document.getElementById('output');
@@ -99,7 +99,8 @@ function processFile() {
         const sheetName = workbook.SheetNames[0];
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-        fil_page(jsonData);
+        fil_page(1);
+        dAta=jsonData;
 
         prevLet = jsonData[0][1];
         data1 += `
@@ -132,8 +133,10 @@ function processFile() {
     xhr.send();
 }
 
+
+
 function fil_page(filId){
-    console.log(filId);
+    console.log(dAta);
 }
 
 
