@@ -361,7 +361,8 @@ function create_quest() {
 
 function get_loc() {
     let div = document.getElementById("startDiv");
-    console.log(div.id);
+     var computedStyle = window.getComputedStyle(divElement);
+    console.log(computedStyle);
 }
 
 function get_rand(x) {
