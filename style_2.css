@@ -96,16 +96,12 @@ table#output {
     padding:none;
 }
 
-/* Add these styles to your CSS file */
-.modified-prevLet {
-    transition: background-color 0.5s ease-in-out;
-}
-
+.modified-prevLet,
 .modified-prevLet-bot {
     transition: background-color 0.5s ease-in-out;
 }
 
 .highlight {
-    background-color: #e0e0e0; /* Adjust the color as needed */
+    background-color: rgba(128, 128, 128, 0.5); /* Adjust the rgba values as needed */
     transition: background-color 1s ease-in-out;
 }
