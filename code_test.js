@@ -362,7 +362,10 @@ function create_quest() {
 function get_loc() {
     let div = document.getElementById("startDiv");
      var computedStyle = window.getComputedStyle(div);
-    console.log(computedStyle.display);
+    if(computedStyle.display!==none)
+        return "start.html";
+    else
+        return "solo.html";
 }
 
 function get_rand(x) {
