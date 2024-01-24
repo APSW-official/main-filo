@@ -101,7 +101,7 @@ function processFile() {
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         
         dAta=jsonData;
-        fil_page(1);
+        
         prevLet = jsonData[0][1];
         data1 += `
             <tr class="modified-prevLet-bot" id="${prevLet.toUpperCase()}">
@@ -136,7 +136,7 @@ function processFile() {
 
 
 function fil_page(filId){
-    console.log(dAta);
+    console.log(dAta[filId][0]);
 }
 
 
