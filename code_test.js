@@ -365,7 +365,7 @@ function create_quest() {
         var computedStyle = window.getComputedStyle(div);
      console.log(computedStyle.display !== 'none')
         if (computedStyle.display !== 'none')
-             window.location.href = "start.html";  // Uncomment this line to actually redirect
+             window.location.href = "index.html";  // Uncomment this line to actually redirect
         else
             window.location.href = "solo.html";  // Uncomment this line to actually redirect
     }
