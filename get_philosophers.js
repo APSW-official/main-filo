@@ -80,6 +80,17 @@ function setupButtonEventListeners() {
     }
 }
 
+ function get_loc(buttonId) {
+     if(buttonId==='iesire'){
+        let div = document.getElementById("conteiner");
+        var computedStyle = window.getComputedStyle(div);
+        if (computedStyle.display !== 'none')
+             window.location.href = "index.html";  // Uncomment this line to actually redirect
+        else
+            window.location.href = "studiu.html";  // Uncomment this line to actually redirect
+    }
+ }
+
 
 let dAta;
 function processFile() {
