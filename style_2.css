@@ -105,3 +105,32 @@ table#output {
     background-color: rgba(128, 128, 128, 0.5); /* Adjust the rgba values as needed */
     transition: background-color 1s ease-in-out;
 }
+
+/* Add this style for the buttons inside the table */
+.modified-prevLet .custom-button {
+    border: none;
+    outline: none;
+    padding: none;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Microsoft New Tai Lue";
+    font-style: italic;
+}
+
+/* Add this style for the buttons inside the table when hovered */
+.modified-prevLet .custom-button:hover {
+    color: #ff0565;
+    background-color: transparent;
+}
+
+/* Add this style for the buttons inside the table when clicked */
+.modified-prevLet .custom-button:active {
+    /* Add any additional styles for the active state */
+}
+
+/* Add this style for the buttons inside the table when focused */
+.modified-prevLet .custom-button:focus {
+    /* Add any additional styles for the focused state */
+}
