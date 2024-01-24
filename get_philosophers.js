@@ -148,7 +148,7 @@ function processFile() {
 
 function fil_page(filId){
     console.log(dAta[filId][0]);
-    let startDiv = document.getElementById("container");
+    let startDiv = document.getElementById("conteiner");
         startDiv.style.display = "none";
 }
 
