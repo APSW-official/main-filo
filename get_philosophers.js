@@ -84,21 +84,25 @@ function processFile() {
             </tr>
         `;
 
-        for (el of jsonData) {
-            if (el[1] != prevLet) {
-                prevLet = el[1];
-                data1 += `
-                    <tr class="modified-prevLet" id="${prevLet.toUpperCase()}">
-                        <td>${prevLet.toUpperCase()}</td>
-                    </tr>
-                `;
-            }
+    for (let i = 0; i < jsonData.length; i++) {
+        const el = jsonData[i];
+    
+        if (el[1] != prevLet) {
+            prevLet = el[1];
             data1 += `
-                <tr>
-                    <td>${el[0]}</td>
+                <tr class="modified-prevLet" id="${prevLet.toUpperCase()}">
+                    <td>${prevLet.toUpperCase()}</td>
                 </tr>
             `;
         }
+    
+        data1 += `
+            <tr>
+                <td>${el[0]}</td>
+            </tr>
+        `;
+    }
+
 
         outputDiv.innerHTML = data1;
     };
