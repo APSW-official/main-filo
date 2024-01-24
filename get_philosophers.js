@@ -98,7 +98,7 @@ function processFile() {
     
         data1 += `
             <tr>
-                <td><button id=${i}>${el[0]}</button></td>
+                <td><button class="custom-button" id=${i}>${el[0]}</button></td>
             </tr>
         `;
     }
