@@ -96,17 +96,16 @@ table#output {
     padding:none;
 }
 
+/* Add these styles to your CSS file */
+.modified-prevLet {
+    transition: background-color 0.5s ease-in-out;
+}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.modified-prevLet-bot {
+    transition: background-color 0.5s ease-in-out;
 }
 
 .highlight {
-    animation: highlight 1s ease-in-out, fadeIn 1s ease-in-out 1s;
-    background-color: yellow; /* Change the background color to the desired highlight color */
+    background-color: #e0e0e0; /* Adjust the color as needed */
+    transition: background-color 1s ease-in-out;
 }
