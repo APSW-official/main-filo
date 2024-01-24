@@ -200,7 +200,7 @@ let p = 1, y = 0;
 let testDiv;
 
 function start() {
-    console.log(`${get_loc()}`);
+    console.log(get_loc());
     if (!(document.getElementById("toggleSwitch").checked)) {
         if (dif !== undefined && ans !== undefined && hints !== undefined) {
             console.log("All three variables have values");
