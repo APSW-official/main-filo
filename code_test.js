@@ -227,7 +227,7 @@ function start() {
     if (ok) {
         let startDiv = document.getElementById("startDiv");
         startDiv.style.display = "none";
-        dif = dif * 20;
+        dif = dif * 10;
         console.log(dif);
         create_quest();
     }
