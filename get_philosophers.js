@@ -151,7 +151,7 @@ function fil_page(filId){
     let startDiv = document.getElementById("conteiner");
         startDiv.style.display = "none";
     let outputDiv=document.getElementById("fil_info");
-    output.style.display="block";
+    outputDiv.style.display="block";
     let data='';
     data+=`<div style="margin-bottom: 100px; text-align: center;"> 
     <h3>${dAta[filId][0]}</h3>
