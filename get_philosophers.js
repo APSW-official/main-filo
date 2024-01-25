@@ -150,7 +150,7 @@ function fil_page(filId){
     console.log(dAta[filId][0]);
     let startDiv = document.getElementById("conteiner");
         startDiv.style.display = "none";
-    let outputDiv=document.getElementById("output");
+    let outputDiv=document.getElementById("fil_info");
     output.style.display="block";
     let data='';
     data+=`<div style="margin-bottom: 100px; text-align: center;"> 
