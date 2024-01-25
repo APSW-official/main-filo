@@ -163,7 +163,7 @@ function fil_page(filId){
         for(el of dAta[filId])
             data+=`<li>${el}</li>`
     data+='</ul>'
-    output.innerHTML=data;
+    outputDiv.innerHTML=data;
 }
 
 
