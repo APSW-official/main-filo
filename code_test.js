@@ -283,6 +283,7 @@ function check_selAns() {
             testDiv.style.display = "none";
             let scoreDiv = document.getElementById("score");
             scoreDiv.style.display = "block";
+            scoreDiv.style.width=100%;
             scoreDiv.innerHTML = `<div id="displayScore"><h3>Ai obținut<p>${scor}</h3></div>`;
         }
     }
