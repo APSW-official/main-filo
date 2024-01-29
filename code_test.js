@@ -284,7 +284,7 @@ function check_selAns() {
             let scoreDiv = document.getElementById("score");
             scoreDiv.style.display = "flex";
             scoreDiv.style.width="100%";
-            scoreDiv.innerHTML = `<div id="displayScore"><h3>Ai obținut<p>${scor}</h3></div>`;
+            scoreDiv.innerHTML = `<div id="displayScore" style=" width: 200px;  height: 200px; border: 1px solid white;background-color: transparent;text-align: center; display: flex; flex-direction: column;   align-items: center;     justify-content: center;"><h3>Ai obținut<p>${scor}</h3></div>`;
         }
     }
 }
