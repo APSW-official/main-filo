@@ -167,7 +167,7 @@ table button:active {
    width: 300px; /* Adjust the width as needed */
             height: 200px; /* Adjust the height as needed */
             /* No background-color property for the centered div */
-            display: flex;
+            display: block;
             align-items: center;
             justify-content: center;
 }
