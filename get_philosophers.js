@@ -161,7 +161,7 @@ function fil_page(filId){
     `;
     data+='<ul>'
         for(el of dAta[filId]){
-            console.log(dAta[filId].indexOf("el"));
+            console.log(dAta[filId].indexOf(el));
             data+=`<li>${el}</li>`
         }
     data+='</ul>'
