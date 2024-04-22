@@ -84,6 +84,7 @@ h1 {
 table {
     border-collapse: separate;
     border-spacing: 20px; /* Setează distanța între celule */
+    padding: 200px;
 }
 
 td {
