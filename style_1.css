@@ -116,7 +116,7 @@ table td a {
     text-align:center;
     padding-top:20px;
 }
-.start_menu td:hover {
+.start_menu tr:hover {
     background-color: rgba(0, 0, 0, 0.4); 
 
 }
