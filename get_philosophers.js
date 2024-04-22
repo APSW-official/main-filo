@@ -161,7 +161,7 @@ function fil_page(filId){
     `;
     data+='<ul>'
         for(el of dAta[filId]){
-            if(dAta[filId].idexOf(el)>1)
+            if(dAta[filId].indexOf(el)>1)
             data+=`<li>${el}</li>`
         }
     data+='</ul>'
