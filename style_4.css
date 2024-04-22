@@ -171,3 +171,7 @@ table button:active {
     justify-content: center;
 }
 
+
+.hint{
+display: none;
+}
