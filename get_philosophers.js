@@ -160,9 +160,8 @@ function fil_page(filId){
     <h4>${dAta[filId][0]} a spus:</h4>
     `;
     data+='<ul>'
-    console.log(dAta);
         for(el of dAta[filId]){
-            console.log(dAta.indexOf("el"));
+            console.log(dAta[filId].indexOf("el"));
             data+=`<li>${el}</li>`
         }
     data+='</ul>'
