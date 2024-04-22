@@ -81,26 +81,18 @@ h1 {
     z-index: 2;
 }
 
-table {
-    border-collapse: collapse;
-}
-
-th, td {
-    position: relative;
-    width: 250px;
-    height: 100px;
-    text-align: center;
-    border: 1px solid white;
-    padding: 5px;
-    font-size: 40px;
-}
 .start_menu {
-    position: relative;
-    border-collapse: separate;
-    border-spacing: 0 40px;
-    z-index: 2;
+    border-collapse: separate; /* Specifică că marginile celulelor tabelului nu trebuie combinate */
+    border-spacing: 10px; /* Setează distanța între celule */
 }
 
+.start_menu th,
+.start_menu td {
+    border: 1px solid white; /* Adaugă o linie solidă între celule */
+    padding: 10px; /* Adaugă un spațiu între conținutul celulei și marginea ei */
+    text-align: center; /* Aliniază textul în centru */
+    font-size: 20px; /* Mărește mărimea fontului pentru a se potrivi cu celulele mari */
+}
 a:link {
     color: white;
     background-color: transparent;
