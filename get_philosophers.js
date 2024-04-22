@@ -161,7 +161,7 @@ function fil_page(filId){
     `;
     data+='<ul>'
         for(el of dAta[filId])
-            colsole.log(dAta.indexOf("el"));
+            console.log(dAta.indexOf("el"));
             data+=`<li>${el}</li>`
     data+='</ul>'
     outputDiv.innerHTML=data;
