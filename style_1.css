@@ -102,6 +102,10 @@ td {
     z-index: 2;
 }
 
+table td a {
+    text-decoration: none; /* Elimină sublinierea implicită */
+    color: inherit; /* Păstrează culoarea textului implicită */
+}
 
 
 .start_menu div {
