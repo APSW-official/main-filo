@@ -161,6 +161,7 @@ function fil_page(filId){
     `;
     data+='<ul>'
         for(el of dAta[filId])
+            if(dAta.indexOf("el")>1)
             data+=`<li>${el}</li>`
     data+='</ul>'
     outputDiv.innerHTML=data;
