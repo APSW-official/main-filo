@@ -174,5 +174,5 @@ table button:active {
 
 .hint{
 /*display: none;*/
-pandding: screen.width-200;
+margin-right: 200px;
 }
