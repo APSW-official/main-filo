@@ -1,240 +1,56 @@
-/*let dif, ans, hints, ok = 0,scor=0,selAns;
-let secureRandomNumber;
-let otherAns = [];
-let RAns, fil, filC;
-let p=1,y=0;
-let testDiv;
-
-function get_loc(){
-    let div=document.getElementById("startDiv");
-    console.log(div.id);
-    
-}
-function start() {
-    if (!(document.getElementById("toggleSwitch").checked)) {
-        if (dif !== undefined && ans !== undefined && hints !== undefined) {
-            console.log("All three variables have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            console.log("Hints:", hints);
-            ok = 1;
-        } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for all inputs.");
-        }
-    } else {
-        if (dif !== undefined && ans !== undefined) {
-            console.log("Only Dif and Ans have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            ok = 1;
-        } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for all inputs.");
-        }
-    }
-
-    if (ok) {
-        let startDiv = document.getElementById("startDiv");
-        startDiv.style.display = "none";
-        dif=dif*20;
-        console.log(dif);
-        create_quest();
-         
-    }
-}
-
-function processFile2(callback) {
-    const filePath = 'filozofi2.xlsx'; // Update with your actual file path
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', filePath, true);
-    xhr.responseType = 'arraybuffer';
-
-    xhr.onload = function () {
-        const arrayBuffer = xhr.response;
-        const data = new Uint8Array(arrayBuffer);
-        const workbook = XLSX.read(data, { type: 'array' });
-
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-
-        // Call the callback function with the jsonData
-        callback(jsonData);
-    };
-
-    xhr.send();
-}
-
-
-
-
-
-function get_dif(x) {
-    dif = x;
-}
-
-function get_ans(x) {
-    ans = x;
-}
-
-function get_hints(x) {
-    hints = x;
-}
-
-function get_selAns(x) {
-   selAns=x;
- y=1;
-}
-
-function check_selAns(){
-    if(y){
-        scor+=selAns === RAns?1:0;
-        console.log(selAns === RAns);
-        if(p<=dif){
-            y=0;
-            p++;
-            create_quest();
-        }
-        else{
-            testDiv.style.display = "none";
-            let scoreDiv=document.getElementById("score");
-            scoreDiv.style.display = "block";
-            let dataScore=`<div id="displayScore">`;
-            dataScore+=`<h3>Ai obținut<p>${scor}</h3>`;
-
-            dataScore+=`</div>`;
-             scoreDiv.innerHTML = dataScore;
-        }
-        
-    }
-}
-
-function create_quest() {
-    {
-        processFile2(function (jsonData) {
-            const len = jsonData.length;
-            let uniqueValues = new Set();
-
-            fil = get_rand(len);
-            filC = get_rand(jsonData[fil].length);
-
-            RAns = get_rand(ans);
-            otherAns[RAns] = fil;
-
-            uniqueValues.add(fil);
-
-            // Make sure RAns is within the valid range
-            while (RAns >= ans) {
-                RAns = get_rand(ans);
-            }
-            while (filC < 2) {
-                filC = get_rand(jsonData[fil].length);
-            }
-            for (let i = 0; i < ans; i++) {
-                let aux2;
-
-                do {
-                    aux2 = get_rand(len);
-                } while (uniqueValues.has(aux2));
-                if (i !== RAns) {
-                    otherAns[i] = aux2;
-                    uniqueValues.add(aux2);
-                }
-            }
-
-            console.log(p, RAns);
-            testDiv = document.getElementById("testDiv");
-            testDiv.style.display = "block";
-
-            let data = '';
-            data += `<div style="margin-bottom: 200px; text-align: center;">`;
-            data += `<h3>${jsonData[fil][filC]}</h3>`;
-            data += `</div>`;
-
-            let table_ans = '<table class="ans" style="width: 100%;">';
-
-            // Calculate the number of rows and columns
-            const numRows = ans / 2;
-
-            for (let row = 1; row <= numRows; row++) {
-                table_ans += '<tr>';
-
-                for (let col = 1; col <= 2; col++) {
-                    const index = (row - 1) * 2 + col;
-
-                    // Make sure otherAns[index-1] is within the valid range
-                    while (otherAns[index - 1] >= len) {
-                        otherAns[index - 1] = get_rand(25);
-                    }
-
-                    table_ans += `<td><button onclick="get_selAns(${index - 1})">${jsonData[otherAns[index - 1]][0]}</button></td>`;
-                }
-
-                table_ans += '</tr>';
-            }
-
-            table_ans += '</table>';
-            data += table_ans;
-            data += `<button onclick="check_selAns()">Trimite</button>`;
-            testDiv.innerHTML = data;
-
-            // Set the combined content to the testDiv
-        });
-    }
-    // Variables declared inside the block will be out of scope here
-}
-
-
-function get_rand(x) {
-    return window.crypto.getRandomValues(new Uint32Array(1))[0] % x;
-}*/
-
-
-
 let dif, ans, hints, ok = 0, scor = 0, selAns;
 let secureRandomNumber;
 let otherAns = [];
 let RAns, fil, filC;
 let p = 1, y = 0;
 let testDiv;
+let hPerQ=1;
 
 function start() {
-    console.log(get_loc());
+    //console.log(get_loc());
     if (!(document.getElementById("toggleSwitch").checked)) {
         if (dif !== undefined && ans !== undefined && hints !== undefined) {
-            console.log("All three variables have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            console.log("Hints:", hints);
+            // console.log("All three variables have values");
+            // console.log("Dif:", dif);
+            // console.log("Ans:", ans);
+            // console.log("Hints:", hints);
             ok = 1;
         } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for all inputs.");
+            if (dif !== undefined && ans !== undefined) {
+                // console.log("Only Dif and Ans have values");
+                // console.log("Dif:", dif);
+                // console.log("Ans:", ans);
+                ok = 1;
+            } else {
+                if(dif === undefined && ans === undefined)
+                    alert("Nu ai selectat modul de dificutatea și numărul de variante răspuns. Pentru a continua trebuie să alegi dificutatea și numărul de răspunsuri.");
+                else
+                    if(dif === undefined)
+                        alert("Trbuie să selectezi și modul de difictate.")
+                    else{
+                        alert("Trbuie să selectezi și numărul de variante de răspuns.")
+                    }
+
+            }
         }
-    } else {
-        if (dif !== undefined && ans !== undefined) {
-            console.log("Only Dif and Ans have values");
-            console.log("Dif:", dif);
-            console.log("Ans:", ans);
-            ok = 1;
-        } else {
-            console.log("Not all required variables have values");
-            alert("Please provide values for all inputs.");
-        }
-    }
 
     if (ok) {
         let startDiv = document.getElementById("startDiv");
         startDiv.style.display = "none";
         dif = dif * 10;
-        console.log(dif);
-        create_quest();
+        // console.log(dif);
+        if(hints!==undefined&&hints>0){
+            let divHint=document.getElementById("hint")
+            divHint.style.display = "block";
+        }
+        hPerQ=1;
+        create_quest(2);
+    }
     }
 }
 
 function processFile2(callback) {
-    const filePath = 'filozofi2.xlsx'; // Update with your actual file path
+    const filePath = 'filozofi2.xlsx'; 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', filePath, true);
     xhr.responseType = 'arraybuffer';
@@ -274,11 +90,12 @@ function get_selAns(x) {
 function check_selAns() {
     if (y) {
         scor += selAns === RAns ? 1 : 0;
-        console.log(selAns === RAns);
+        // console.log(selAns === RAns);
         if (p <= dif) {
             y = 0;
             p++;
-            create_quest();
+            hPerQ=1;
+            create_quest(2);
         } else {
             testDiv.style.display = "none";
             let scoreDiv = document.getElementById("score");
@@ -289,44 +106,41 @@ function check_selAns() {
     }
 }
 
-function create_quest() {
+function create_quest(hOrq) {
     processFile2(function (jsonData) {
+        otherAns=[];
+        if(hOrq==2){
         const len = jsonData.length;
         let uniqueValues = new Set();
 
         fil = get_rand(len);
-        filC = get_rand(jsonData[fil].length);
 
         RAns = get_rand(ans);
-        otherAns[RAns] = fil;
-
+        
         uniqueValues.add(fil);
 
-        // Make sure RAns is within the valid range
-        while (RAns >= ans) {
-            RAns = get_rand(ans);
-        }
-        while (filC < 2) {
+        RAns = get_rand(ans);
+        
+        do{
             filC = get_rand(jsonData[fil].length);
-        }
+        }while (filC < 2);
 
-        for (let i = 0; i < ans; i++) {
-            let aux2;
-
-            do {
-                aux2 = get_rand(len);
-            } while (uniqueValues.has(aux2));
-
+        for (let i = 0; i < ans; i++){
             if (i !== RAns) {
-                otherAns[i] = aux2;
-                uniqueValues.add(aux2);
+                let aux2;
+                do {
+                    aux2 = get_rand(len);
+                } while (uniqueValues.has(aux2));
+                    otherAns[i] = aux2;
+                    uniqueValues.add(aux2);
             }
         }
 
-        console.log(p, RAns);
+            otherAns[RAns] = fil;
+            console.log(RAns,otherAns,jsonData[fil][0]);
         testDiv = document.getElementById("testDiv");
         testDiv.style.display = "block";
-
+        
         let data = '';
         data += `<div style="margin-bottom: 200px; text-align: center;">`;
         data += `<h3>${jsonData[fil][filC]}</h3>`;
@@ -334,7 +148,6 @@ function create_quest() {
 
         let table_ans = '<table class="ans" style="width: 100%;">';
 
-        // Calculate the number of rows and columns
         const numRows = ans / 2;
 
         for (let row = 1; row <= numRows; row++) {
@@ -343,21 +156,39 @@ function create_quest() {
             for (let col = 1; col <= 2; col++) {
                 const index = (row - 1) * 2 + col;
 
-                // Make sure otherAns[index-1] is within the valid range
-                while (otherAns[index - 1] >= len) {
-                    otherAns[index - 1] = get_rand(25);
-                }
-
-                table_ans += `<td><button onclick="get_selAns(${index - 1})">${jsonData[otherAns[index - 1]][0]}</button></td>`;
+                if (jsonData[otherAns[index - 1]] && jsonData[otherAns[index - 1]].length > 0) {
+                    table_ans += `<td><button onclick="get_selAns(${index - 1})">${jsonData[otherAns[index - 1]][0]}</button></td>`;
+                } 
             }
-
             table_ans += '</tr>';
         }
 
         table_ans += '</table>';
         data += table_ans;
-        data += `<button onclick="check_selAns()">Trimite</button>`;
+        data += `<button class="back" onclick="check_selAns()">Trimite</button>`;
         testDiv.innerHTML = data;
+        console.log(hints)
+        }
+        else{
+            
+            if(hints>0&&hPerQ==1){
+                alert("Filozoful care a spus asta este "+jsonData[fil][0]+'.');
+                hPerQ--;
+                hints--;
+                if(hints==2)
+                alert("Mai ai doar două indicii")
+                else
+                    if(hints==1)
+                        alert("Mai ai doar un indiciu")
+                    else
+                        alert("Nu mai ai indicii")
+                
+            }
+            if(hints===0){
+                let divHint=document.getElementById("hint");
+                divHint.style.display="none";
+            }
+        }
     });
 }
 
@@ -366,18 +197,25 @@ function create_quest() {
         let div = document.getElementById("startDiv");
         var computedStyle = window.getComputedStyle(div);
         if (computedStyle.display !== 'none')
-             window.location.href = "index.html";  // Uncomment this line to actually redirect
-        else
-            window.location.href = "solo.html";  // Uncomment this line to actually redirect
+             window.location.href = "index.html";  
+        else{
+            window.location.href = "solo.html";  
+            dif=undefined, ans=undefined, hints=undefined, ok = 0, scor = 0, selAns=undefined;
+            secureRandomNumber;
+            otherAns = [];
+            RAns=undefined, fil=undefined, filC=undefined;
+            p = 1, y = 0;
+            testDiv=undefined;
+            hPerQ=1;
+        }
+            
     }
+
+    
  }
 function get_rand(x) {
     return window.crypto.getRandomValues(new Uint32Array(1))[0] % x;
 }
 
-/*document.getElementById("toggleSwitch").addEventListener("change", function () {
-    var x = document.getElementById("indicii");
 
-    x.style.display = this.checked ? "none" : "inline-block";
-});
-*/
+

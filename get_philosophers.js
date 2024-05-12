@@ -1,57 +1,3 @@
-/*document.addEventListener('DOMContentLoaded', function() {
-    processFile();
-});
-
-function processFile() {
-    const filePath = 'filozofi.xlsx'; // Update with your actual file path
-    const outputDiv = document.getElementById('output');
-    let data1 = "";
-    let prevLet;
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', filePath, true);
-    xhr.responseType = 'arraybuffer';
-
-    xhr.onload = function () {
-        const arrayBuffer = xhr.response;
-        const data = new Uint8Array(arrayBuffer);
-        const workbook = XLSX.read(data, { type: 'array' });
-
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-        console.log(jsonData);
-
-        // Call processFile2 with the necessary data
-        
-
-        prevLet = jsonData[0][1];
-        data1 += `
-            <tr class="modified-prevLet-bot" id="${prevLet.toUpperCase()}">
-                <td >${prevLet.toUpperCase()}</td>
-            </tr>
-        `;
-
-        for (el of jsonData) {
-            if (el[1] != prevLet) {
-                prevLet = el[1];
-                data1 += `
-                    <tr class="modified-prevLet" id="${prevLet.toUpperCase()}">
-                        <td>${prevLet.toUpperCase()}</td>
-                    </tr>
-                `;
-            }
-            data1 += `
-                <tr>
-                    <td>${el[0]}</td>
-                </tr>
-            `;
-        }
-
-        outputDiv.innerHTML = data1;
-    };
-
-    xhr.send();
-}*/
 
 document.addEventListener('DOMContentLoaded', function () {
     processFile();
@@ -85,16 +31,16 @@ function setupButtonEventListeners() {
         let div = document.getElementById("conteiner");
         var computedStyle = window.getComputedStyle(div);
         if (computedStyle.display !== 'none')
-             window.location.href = "index.html";  // Uncomment this line to actually redirect
+             window.location.href = "index.html";  
         else
-            window.location.href = "studiu.html";  // Uncomment this line to actually redirect
+            window.location.href = "studiu.html"; 
     }
  }
 
 
 let dAta;
 function processFile() {
-    const filePath = 'filozofi.xlsx'; // Update with your actual file path
+    const filePath = 'filozofi.xlsx'; 
     const outputDiv = document.getElementById('output');
     let data1 = "";
     let prevLet;
@@ -154,16 +100,13 @@ function fil_page(filId){
     outputDiv.style.display="block";
     let data='';
     data+=`<div style="margin-bottom: 100px; text-align: center;"> 
-    <h3>${dAta[filId][0]}</h3>
+    <h1>${dAta[filId][0]}</h1>
     </div>
-    <div style="text-align: left;">
-    <h4>${dAta[filId][0]} a spus:</h4>
-    `;
+    <div style="text-align: left;">`;
     data+='<ul>'
-        for(el of dAta[filId]){
+        for(el of dAta[filId])
             if(dAta[filId].indexOf(el)>1)
-            data+=`<li>${el}</li>`
-        }
+                data+=`<li>${el}</li>`
     data+='</ul>'
     outputDiv.innerHTML=data;
 }

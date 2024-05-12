@@ -82,19 +82,17 @@ h1 {
 }
 
 table {
-    border-collapse: separate;
-    border-spacing: 20px; /* Setează distanța între celule */
-    padding: 200px;
+    border-collapse: collapse;
 }
 
-td {
+th, td {
     position: relative;
     width: 250px;
     height: 100px;
     text-align: center;
     border: 1px solid white;
+    padding: 5px;
     font-size: 40px;
-    padding: 10px;
 }
 .start_menu {
     position: relative;
@@ -103,11 +101,12 @@ td {
     z-index: 2;
 }
 
-table td a {
-    text-decoration: none; /* Elimină sublinierea implicită */
-    color: inherit; /* Păstrează culoarea textului implicită */
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    
 }
-
 
 .start_menu div {
     width: 100%;
@@ -116,7 +115,7 @@ table td a {
     text-align:center;
     padding-top:20px;
 }
-.start_menu tr:hover {
+.start_menu td:hover {
     background-color: rgba(0, 0, 0, 0.4); 
 
 }
